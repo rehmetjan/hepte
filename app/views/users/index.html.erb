@@ -1,0 +1,13 @@
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<% if @users.any? %>
+				<%= @users.each do |user| %>
+				<li><%= user.name %></li>
+				<% end %>
+			<% else %>
+				<p>no user yet</p>
+			<% end %>
+		</div>
+	</div>
+</div>
