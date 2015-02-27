@@ -1,0 +1,11 @@
+@import "bootstrap";
+
+
+body {
+  background: #eee;
+}
+
+.text-hide-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
