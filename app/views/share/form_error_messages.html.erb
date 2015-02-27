@@ -1,0 +1,10 @@
+<% if form.object.errors.any? %>
+	<div class="alert alert-warning">
+		<a class="close" data-dismiss="alert">
+			&times;
+			<% form.object.errors.full_messages.each do |message| %>
+			<p><%= message %></p>
+			<% end %>
+		</a>
+	</div>
+<% end %>
