@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hepte</title>
+  <title><%= @page_title? "#{@page_title} - #{CONFIG['title']}" : "#{CONFIG['title']}" %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
-
-<%= yield %>
-
-</body>
+	<body>
+		<div class="nav navbar navbar-static-top">
+			<div class="container">
+				<div class="nav-bar-header">
+					<a href="<%= root_path %>"><%= CONFIG['title'] %></a>
+				</div>
+				<div class="nav navbar-nav navbar-right">
+					<li><a>login</a></li>
+					<li><a>signup</a></li>
+				</div>
+			</div>
+		</div>
+		
+		
+		<%= yield %>
+	</body>
 </html>

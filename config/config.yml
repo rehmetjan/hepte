@@ -1,0 +1,19 @@
+default: &default
+  title: Hepte
+  host: hepte.com
+
+development:
+  <<: *default
+  admin_emails:
+    - admin@nedidu.com
+
+test:
+  <<: *default
+  admin_emails:
+    - admin@nedidu.com
+
+production:
+  <<: *default
+
+  admin_emails:
+    - yasin@nedidu.com
