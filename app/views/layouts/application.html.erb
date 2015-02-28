@@ -14,8 +14,12 @@
 					<a class ="navbar-brand" href="<%= root_path %>"><%= CONFIG['title'] %></a>
 				</div>
 				<div class="nav navbar-nav navbar-right">
-					<li><a>login</a></li>
-					<li><%= link_to 'SignUp',signup_path %></li>
+					<% if login? %>
+						<li><%= link_to 'Logout', logout_path, method: :delete %></li>
+					<% else %>
+						<li><%= link_to 'Login', login_path %></li>
+						<li><%= link_to 'SignUp',signup_path %></li>
+					<% end %>
 				</div>
 			</div>
 		</nav>
