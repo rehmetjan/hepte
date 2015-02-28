@@ -3,6 +3,12 @@ class ApplicationController < ActionController::Base
   
   helper_method :login?, :current_user
   
+  def no_login_required
+    if login?
+      redirect_to root_url
+    end
+  end
+  
   def login?
     !!current_user
   end
