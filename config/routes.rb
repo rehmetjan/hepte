@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   root 'users#index'
-  resources :users
+  resources :users, only: [:create] do
+    collection do
+      get :check_email
+      get :check_username
+    end
+  end
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
