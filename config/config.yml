@@ -2,18 +2,33 @@ default: &default
   title: Hepte
   host: hepte.com
 
+  mailer:
+    # For localhost postfix
+    smtp_settings:
+      address: localhost
+      port: 25
+      enable_starttls_auto: false
+      #domain:
+      #user_name:
+      #password:
+      #authentication:
+    default_options:
+      from: no-reply@hepte.com
+    default_url_options:
+      host: hepte.com
+
 development:
   <<: *default
   admin_emails:
-    - admin@nedidu.com
+    - admin@hepte.com
 
 test:
   <<: *default
   admin_emails:
-    - admin@nedidu.com
+    - admin@hepte.com
 
 production:
   <<: *default
 
   admin_emails:
-    - yasin@nedidu.com
+    - yasin@hepte.com
