@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     resource :password, only: [:show, :update]
     resource :account, only: [:show, :update]
   end
+  
+  namespace :users do
+    resource :password, only: [:show, :new, :create, :update, :edit]
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -4,3 +4,5 @@
 #= require jquery.validate
 #= require bootstrap
 #= require_tree ./plugins
+
+Turbolinks.enableProgressBar();
