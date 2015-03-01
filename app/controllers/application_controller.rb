@@ -23,8 +23,15 @@ class ApplicationController < ActionController::Base
     @current_user = user
   end
   
+  def login_required
+    unless login?
+      redirect_to login_path(return_to: (request.fullpath if request.get?))
+    end
+  end
+  
   def logout
     session.delete(:user_id)
     @current_user = nil
   end
+  
 end

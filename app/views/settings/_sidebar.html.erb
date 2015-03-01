@@ -1,0 +1,14 @@
+<div class="list-group">
+	<a class="list-group-item <%= 'active' if controller_name == 'accounts' %>" href="<%= settings_account_path %>">
+		<div class="pull-right">
+			<i class="fa fa-chevron-right"></i>
+		</div>
+		Account
+	</a>
+	<a class="list-group-item <%= 'active' if controller_name == 'passwords' %>" href="<%= settings_password_path %>">
+		<div class="pull-right">
+			<i class="fa fa-chevron-right"></i>
+		</div>
+		Password
+	</a>
+</div>

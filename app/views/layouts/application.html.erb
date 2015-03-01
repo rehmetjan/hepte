@@ -21,8 +21,8 @@
 								<i class="fa fa-caret-down"></i>
 							</a>
 							<ul class="dropdown-menu dropdown-menu-right">
-								<li><a>profile</a></li>
-								<li><a>settings</a></li>
+								<li><%= link_to 'Account', settings_account_path %></li>
+								<li><%= link_to 'Settings', settings_password_path %></li>
 								<li><%= link_to 'Logout', logout_path, method: :delete %></li>
 							</ul>
 						</li>
