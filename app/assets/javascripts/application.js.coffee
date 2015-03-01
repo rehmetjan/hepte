@@ -1,6 +1,6 @@
 #= require jquery
 #= require jquery_ujs
-#= require jquery.validate
 #= require turbolinks
+#= require jquery.validate
 #= require bootstrap
 #= require_tree ./plugins

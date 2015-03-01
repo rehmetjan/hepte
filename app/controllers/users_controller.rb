@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new params.require(:user).permit(:name, :username, :email, :password)
     if @user.save
       login_as @user
+      UserMailer.password_reset(@user.id).deliver
       redirect_to root_url
     else
       render 'new'
