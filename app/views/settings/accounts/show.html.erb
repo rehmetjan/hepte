@@ -11,7 +11,7 @@
 						<h3 class="panel-title">Account</h3>
 					</div>
 					<div class="panel-body">
-						<%= form_for @user, url: settings_account_path, html: { class: 'form-horizontal account-form' } do |f| %>
+						<%= form_for @user, url: settings_account_path, html: { class: 'form-horizontal user-form' } do |f| %>
 							<%= render 'share/flash_messages' %>
 							<%= render 'share/form_error_messages', form: f %>
 							<div class="form-group">
@@ -45,20 +45,34 @@
 	</div>
 </div>
 <script>
-	$('form.password-form').validate({
-		rules: {
-			'current_password' : 'required',
-			'user[password]' : 'required',
-			'user[password_confirmation]': {
-				equalTo: '#user_password'
-			}
-		},
-		messages: {
-			'current_password' : '<%= @user.errors.generate_message :password, :blank %>',
-			'user[password]' : '<%= @user.errors.generate_message :password, :blank %>',
-			'user[password_confirmation]' : {
-				equalTo: '<%= @user.errors.generate_message :password_confirmation, :confirmation %>'
-			}
-		}
-	});
+$('form.user-form').validate({
+  rules: {
+    'user[email]': {
+      required: true,
+      format: /^([^@\s]+)@((?:[a-z0-9-]+\.)+[a-z]{2,})$/i,
+      remote: '/users/check_email?id=<%= current_user.id %>'
+    },
+    'user[username]': {
+      required: true,
+      remote: '/users/check_username?id=<%= current_user.id %>',
+      format: /^[a-z0-9-]+$/i
+    },
+    'current_password': 'required'
+  },
+  messages: {
+    'user[username]': {
+      required: '<%= @user.errors.generate_message :username, :blank %>',
+      remote: '<%= @user.errors.generate_message :username, :taken %>',
+      format: '<%= @user.errors.generate_message :username, :format %>'
+    },
+    'user[email]': {
+      required: '<%= @user.errors.generate_message :email, :blank %>',
+      remote: '<%= @user.errors.generate_message :email, :taken %>',
+      format: '<%= @user.errors.generate_message :email, :format %>'
+    },
+    'current_password': {
+      required: '<%= @user.errors.generate_message :password, :blank %>'
+    }
+  }
+});
 </script>

@@ -34,8 +34,9 @@
 				</div>
 			</div>
 		</nav>
-		
-		
+		<% if login? && !current_user.confirmed? %>
+			<%= render 'share/user_confirm_required' %>
+		<% end %>
 		<%= yield %>
 	</body>
 </html>

@@ -1,0 +1,25 @@
+<div id="user-confirm-required">
+	<div class="container">
+		<div class="alert alert-warning">
+			<p>please confirm your email <%= current_user.email %></p>
+			<p>
+				<a class="btn btn-default" href="<%= users_confirmation_path %>" data-remote="true" data-method="post">send email</a>
+				<a class="btn" href="<%= settings_account_path %>">change email</a>
+			</p>
+		</div>
+		<div id="user-confirm-required-modal" class="modal fade">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button class="close" data-dismiss="modal">
+							&times;
+						</button>
+						<div class="modal-title">
+		
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

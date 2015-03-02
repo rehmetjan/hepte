@@ -5,12 +5,18 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @user = User.find_by_email login_params[:email]
+    login = login_params[:login]
+    @user = if login.include?('@')
+              User.where('lower(email) = lower(?)', login).first
+            else
+              User.where('lower(username) = lower(?)', login).first
+            end
+            
     if @user && @user.authenticate(login_params[:password])
       login_as @user
       redirect_to root_url
     else
-      flash.now[:warning] = "incorrect password or email"
+      flash.now[:warning] = 'incorrect username or password'
       render :new
     end
   end
@@ -23,6 +29,6 @@ class SessionsController < ApplicationController
   private
   
   def login_params
-    params.require(:session).permit(:email, :password)
+    params.require(:user).permit(:login, :password)
   end
 end

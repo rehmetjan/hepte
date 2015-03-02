@@ -6,4 +6,10 @@ class UserMailer < ActionMailer::Base
          subject: 'password-reset')
   end
   
+  def confirmation(user_id)
+    @user = User.find(user_id)
+    mail(to: @user.email,
+         subject: 'confirmation email')
+  end
+  
 end

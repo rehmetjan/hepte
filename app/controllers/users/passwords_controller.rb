@@ -1,4 +1,4 @@
-class Users::PasswordsController < Users::ApplicationController
+class Users::PasswordsController < ApplicationController
   before_action :no_login_required
   before_action :check_token, only: [:edit, :update]
   

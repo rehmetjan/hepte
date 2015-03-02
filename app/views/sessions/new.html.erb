@@ -7,16 +7,16 @@
 						<h3 class="panel-title">Login</h3>
 					</div>
 					<div class="panel-body">
-						<%= form_for :session, url: login_path do |f| %>
+						<% login = params[:user].try(:[], :login) %>
+						<%= form_tag login_path %>
 							<%= render 'share/flash_messages' %>
 							<div class="form-group">
-								<%= f.text_field :email, placeholder: 'email',tabindex: 1, class: 'form-control' %>
+								<%= text_field_tag 'user[login]',login, placeholder: 'Username or Email',tabindex: 1, class: 'form-control' %>
 							</div>
 							<div class="form-group">
-								<%= f.password_field :password, placeholder: 'password', tabindex: 2, class: 'form-control' %>
+								<%= password_field_tag 'user[password]', nil, placeholder: 'password', tabindex: 2, class: 'form-control', autofocus: login.present? %>
 							</div>
-							<%= f.submit 'Login', tabindex: 4, class: 'btn btn-success' %>
-						<% end %>
+							<%= submit_tag 'Login', tabindex: 3, class: 'btn btn-success' %>
 						<hr>
 						<%= link_to 'Forgot password',new_users_password_path %>
 					</div>
