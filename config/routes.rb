@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   namespace :settings do
     resource :password, only: [:show, :update]
     resource :account, only: [:show, :update]
+    resource :profile, only: [:show, :update]
   end
   
   namespace :users do

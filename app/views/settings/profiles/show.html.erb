@@ -1,0 +1,69 @@
+<% @page_title = 'profile settings' %>
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<%= render 'settings/sidebar' %>
+			</div>
+			<div class="col-md-9">
+				<div class="panel">
+					<div class="panel-heading">
+						<h3 class="panel-title">Profile</h3>
+					</div>
+					<div class="panel-body">
+						<%= form_for @user, url: settings_profile_path, html: { multipart: true, class: 'form-horizontal user-form'} do |f| %>
+							<%= render 'share/flash_messages' %>
+							<%= render 'share/form_error_messages', form: f %>
+							<div class="form-group">
+								<%= f.label :avatar, class: 'control-label col-sm-3' %>
+								<div class="col-sm-6 user-image-uploader">
+									<div class="image">
+										<img class="img-rounded" alt="avatar" src="<%= current_user.avatar.bigger.url %>"></img>
+									</div>
+									<div class="uploader">
+										<%= f.file_field :avatar, tabIndex: 1 %>
+											<div class="checkbox">
+												<label><%= f.check_box :remove_avatar, tabIndex: 2 %>Remove avatar</label>
+											</div>
+									</div>
+								</div>
+							</div>								
+							<div class="form-group">
+								<%= f.label :name, class: 'control-label col-sm-3' %>
+								<div class="col-sm-6">
+									<%= f.text_field :name, class: 'form-control', tabIndex: 3 %>
+								</div>
+							</div>
+							<div class="form-group">
+								<%= f.label :bio, class: 'control-label col-sm-3' %>
+								<div class="col-sm-6">
+									<%= f.text_area :bio, class: 'form-control', tabIndex: 4 %>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-6 col-sm-push-3">
+									<%= f.submit 'Save', class: 'btn btn-primary', tabIndex: 5 %>
+								</div>
+							</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$('form.user-form').validate({
+  rules: {
+    'user[name]': {
+      required: true,
+    }
+  },
+  messages: {
+    'user[name]': {
+      required: '<%= @user.errors.generate_message :name, :blank %>'
+    }
+  }
+});
+</script>
