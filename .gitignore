@@ -14,3 +14,17 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore database and secrets config.
+/config/database.yml
+/config/secrets.yml
+/config/config.yml
+
+# Ignore uploads.
+/public/uploads
+
+# Ignore Vagrant config.
+/.vagrant
+
+# Ignore deploy config.
+/config/deploy
