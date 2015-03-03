@@ -1,8 +1,8 @@
 #= require jquery
 #= require jquery_ujs
 #= require turbolinks
-#= require jquery.validate
 #= require bootstrap
+#= require jquery.validate
 #= require_tree ./plugins
 
 Turbolinks.enableProgressBar();

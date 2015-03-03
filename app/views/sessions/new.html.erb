@@ -8,7 +8,7 @@
 					</div>
 					<div class="panel-body">
 						<% login = params[:user].try(:[], :login) %>
-						<%= form_tag login_path %>
+						<%= form_tag login_path, class: 'user-login' %>
 							<%= render 'share/flash_messages' %>
 							<div class="form-group">
 								<%= text_field_tag 'user[login]',login, placeholder: 'Username or Email',tabindex: 1, class: 'form-control' %>
@@ -25,3 +25,23 @@
 		</div>
 	</div>
 </div>
+<script>
+	$('form.user-login').validate({
+		rules: {
+			'user[login]': {
+				required: true
+			},
+			'user[password]': {
+				required: true
+			}
+		},
+		messages: {
+			'user[login]': {
+				required: 'Username or email can\'t blank'
+			},
+			'user[password]': {
+				required: 'Password can\'t blank'
+			}
+		}
+	});
+</script>
