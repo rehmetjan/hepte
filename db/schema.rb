@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302070929) do
+ActiveRecord::Schema.define(version: 20150303072649) do
 
   create_table "books", force: true do |t|
     t.string   "name"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20150302070929) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "confirmed",       default: false
+    t.string   "locale"
+    t.string   "locked_at"
   end
 
 end

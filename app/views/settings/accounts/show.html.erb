@@ -1,3 +1,4 @@
+<% @page_title = t('.account_settings') %>
 <div class="main">
 	<div class="container">
 		<div class="row">
@@ -27,14 +28,14 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<%= label_tag :current_password,'Current Password', class: 'control-label col-sm-3' %>
+								<%= label_tag :current_password, t('.current_password'), class: 'control-label col-sm-3' %>
 								<div class="col-sm-6">
 									<%= password_field_tag :current_password, nil, class: 'form-control', tabIndex: 3 %>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-6 col-sm-push-3">
-									<%= f.submit 'Save', class: 'btn btn-success' %>
+									<%= f.submit t('.save_changes'), class: 'btn btn-success' %>
 								</div>
 							</div>
 						<% end %>

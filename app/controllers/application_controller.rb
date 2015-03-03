@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   
   helper_method :login?, :current_user
   
+  before_action :set_locale
+  
   def no_login_required
     if login?
       redirect_to root_url
@@ -32,6 +34,10 @@ class ApplicationController < ActionController::Base
   def logout
     session.delete(:user_id)
     @current_user = nil
+  end
+  
+  def set_locale
+    I18n.locale = current_user.try(:locale) || http_accept_language.compatible_language_from(I18n.available_locales) || I18n.default_locale
   end
   
 end

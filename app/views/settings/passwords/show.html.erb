@@ -8,14 +8,14 @@
 			<div class="col-md-9">
 				<div class="panel">
 					<div class="panel-heading">
-						<h3 class="panel-title">Passoword</h3>
+						<h3 class="panel-title"><%= t('.password') %></h3>
 					</div>
 					<div class="panel-body">
 						<%= form_for @user, url: settings_password_path, html: { class: 'form-horizontal password-form' } do |f| %>
 							<%= render 'share/flash_messages' %>
 							<%= render 'share/form_error_messages', form: f %>
 							<div class="form-group">
-								<%= label_tag :current_password, 'Current password', class: 'control-label col-sm-3' %>
+								<%= label_tag :current_password, t('.current_password'), class: 'control-label col-sm-3' %>
 								<div class="col-sm-6">
 									<%= password_field_tag :current_password, nil, class: 'form-control', tabIndex: 1 %>
 								</div>
@@ -34,7 +34,7 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-6 col-sm-push-3">
-									<%= f.submit 'Save', class: 'btn btn-success' %>
+									<%= f.submit t('.save_changes'), class: 'btn btn-success' %>
 								</div>
 							</div>
 						<% end %>

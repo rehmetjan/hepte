@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       login_as @user
       redirect_to root_url
     else
-      flash.now[:warning] = 'incorrect username or password'
+      flash.now[:warning] = I18n.t('sessions.flashes.incorrect_user_name_or_password')
       render :new
     end
   end

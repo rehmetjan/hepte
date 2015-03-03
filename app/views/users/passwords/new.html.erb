@@ -5,18 +5,18 @@
 				<div class="panel">
 					<div class="panel-heading">
 						<h3 class="panel-title">
-							Password reset
+							<%= t('.password_reset') %>
 						</h3>
 					</div>
 					<div class="panel-body">
 						<%= form_tag users_password_path do %>
 						<%= render 'share/flash_messages' %>
 						<div class="form-group">
-							<%= label_tag :email, 'Email', class: 'control-label' %>
-							<%= text_field_tag :email, nil, placeholder: 'Your email', class: 'form-control' %>
+							<%= label_tag :email, t('.email'), class: 'control-label' %>
+							<%= text_field_tag :email, nil, placeholder: t('.your_email'), class: 'form-control' %>
 						</div>
 						<div class="form-group">
-							<%= submit_tag 'Send reset email', class: 'btn btn-default' %>
+							<%= submit_tag t('.send_reset_email'), class: 'btn btn-default' %>
 						</div>
 						<% end %>
 					</div>

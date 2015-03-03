@@ -1,4 +1,4 @@
-<% @page_title = 'profile settings' %>
+<% @page_title = t('.profile_settings') %>
 <div class="main">
 	<div class="container">
 		<div class="row">
@@ -8,7 +8,7 @@
 			<div class="col-md-9">
 				<div class="panel">
 					<div class="panel-heading">
-						<h3 class="panel-title">Profile</h3>
+						<h3 class="panel-title"><%= t('.profile') %></h3>
 					</div>
 					<div class="panel-body">
 						<%= form_for @user, url: settings_profile_path, html: { multipart: true, class: 'form-horizontal user-form'} do |f| %>
@@ -41,8 +41,14 @@
 								</div>
 							</div>
 							<div class="form-group">
+								<%= f.label :locale, class: 'control-label col-sm-3' %>
+								<div class="col-sm-6">
+									<%= f.select :locale, I18n.available_locales.map {|locale| [t("locales.#{locale}"), locale] },{ }, class: 'form-control',tabIndex: 5 %>
+								</div>
+							</div>
+							<div class="form-group">
 								<div class="col-sm-6 col-sm-push-3">
-									<%= f.submit 'Save', class: 'btn btn-primary', tabIndex: 5 %>
+									<%= f.submit t('.save_changes'), class: 'btn btn-primary', tabIndex: 6 %>
 								</div>
 							</div>
 							<% end %>

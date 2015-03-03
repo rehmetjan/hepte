@@ -36,6 +36,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'nokogiri', '~> 1.6.1'
 # Paginator
 gem 'kaminari', '~> 0.15.1'
+# User locale detect
+gem 'http_accept_language', '~> 2.0.1'
+# i18n
+gem 'rails-i18n', '~> 4.0.1'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 

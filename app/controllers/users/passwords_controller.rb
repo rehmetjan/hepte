@@ -10,7 +10,7 @@ class Users::PasswordsController < ApplicationController
       UserMailer.password_reset(@user.id).deliver
       redirect_to users_password_path
     else
-      flash.now[:warning] = 'email not found'
+      flash.now[:warning] = I18n.t('passwords.flashes.user_email_not_found')
       redirect_to root_url
     end
   end
@@ -20,7 +20,7 @@ class Users::PasswordsController < ApplicationController
 
   def update
     if @user.update_attributes params.require(:user).permit(:password, :password_confirmation)
-      flash[:success] = 'password successfully updated'
+      flash[:success] = I18n.t('passwords.flashes.successfully_update')
       redirect_to login_url
     else
       render :edit
@@ -31,7 +31,7 @@ class Users::PasswordsController < ApplicationController
   
   def check_token
     unless @user = User.find_by_password_reset_token(params[:token])
-      flash[:warning] = 'token invalid'
+      flash[:warning] = I18n.t('passwords.flashes.token_invalid')
       redirect_to new_users_password_path
     end
   end

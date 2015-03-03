@@ -6,7 +6,7 @@ class Users::ConfirmationsController < ApplicationController
       @user = User.find_by_confirmation_token(params[:token])
       if @user && @user == current_user
         @user.confirm
-        flash[:success] = 'users.confirmations.confirm_success'
+        flash[:success] = I18n.t('users.confirmations.confirm_success')
         redirect_to root_url
       end
     end
