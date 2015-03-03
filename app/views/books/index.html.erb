@@ -1,0 +1,29 @@
+<% @page_title = 'New Book' %>
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 new-books">
+				<div class="panel">
+					<div class="panel-heading">
+						<h3 class="panel-title">New books</h3>
+					</div>
+					<div class="panel-body">
+						<ul class="list-inline">
+							<% if @books.any? %>
+								<% @books.each do |book| %>
+									<li>
+										<a href="<%= book_path(book) %>">
+											<img class="img" src="<%= book.picture.cover.url %>"></img>
+										</a>
+										<div><%= link_to book.name, book_path(book) %></div>
+										<div><%= book.author %></div>
+									</li>
+								<% end %>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

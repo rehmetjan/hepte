@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
-  root 'users#index'
+  root 'books#index'
+  
   resources :users, only: [:create] do
     collection do
       get :check_email
@@ -26,6 +27,8 @@ Rails.application.routes.draw do
     resource :password, only: [:show, :new, :create, :update, :edit]
     resource :confirmation, only: [:new, :show, :create]
   end
+  
+  resources :books
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

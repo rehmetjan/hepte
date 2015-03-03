@@ -1,0 +1,28 @@
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="panel">
+					<div class="panel-heading">
+						<h1 class="panel-title"><%= @book.name %></h1>
+					</div>
+					<div class="panel-body">
+						<div class="col-sm-6">
+							<div id="cover">
+								<img class="img" src="<%= @book.picture.cover.url %>"></img>
+							</div>
+							<div id="info">
+								<span class="pl">Author: </span><%= @book.author %><br>
+								<span class="pl">Price: </span><%= @book.price %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="panel">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
