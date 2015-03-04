@@ -354,3 +354,6 @@ en:
         publish: Publish
         topics: Topics
         user_s_topics: "%{name}'s topics"
+  books:
+    index:
+        new_books: 'New Books'

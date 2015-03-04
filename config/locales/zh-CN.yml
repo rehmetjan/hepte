@@ -347,3 +347,6 @@ zh-CN:
         publish: "发布"
         topics: "话题"
         user_s_topics: "%{name} 的话题"
+  books:
+    index:
+        new_books: "新书"
