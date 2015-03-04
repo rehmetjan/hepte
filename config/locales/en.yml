@@ -357,3 +357,6 @@ en:
   books:
     index:
         new_books: 'New Books'
+    show:
+        author: Author
+        price: Price

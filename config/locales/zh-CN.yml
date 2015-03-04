@@ -350,3 +350,6 @@ zh-CN:
   books:
     index:
         new_books: "新书"
+    show:
+        author: "作者"
+        price: "价格"

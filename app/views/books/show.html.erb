@@ -12,8 +12,8 @@
 								<img class="img" src="<%= @book.picture.cover.url %>"></img>
 							</div>
 							<div id="info">
-								<span class="pl">Author: </span><%= @book.author %><br>
-								<span class="pl">Price: </span><%= @book.price %>
+								<span class="pl"><%= t('.author') %>: </span><%= @book.author %><br>
+								<span class="pl"><%= t('.price') %>: </span><%= @book.price %>
 							</div>
 						</div>
 					</div>
