@@ -9,14 +9,14 @@
 			<div class="col-md-9">
 				<div class="panel">
 					<div class="panel-heading">
-						<h3 class="panel-title">Account</h3>
+						<h3 class="panel-title"><%= t('.account') %></h3>
 					</div>
 					<div class="panel-body">
 						<%= form_for @user, url: settings_account_path, html: { class: 'form-horizontal user-form' } do |f| %>
 							<%= render 'share/flash_messages' %>
 							<%= render 'share/form_error_messages', form: f %>
 							<div class="form-group">
-								<%= label_tag :username, 'Username', class: 'control-label col-sm-3' %>
+								<%= label_tag :username, t('.username'), class: 'control-label col-sm-3' %>
 								<div class="col-sm-6">
 									<%= f.text_field :username, class: 'form-control', tabIndex: 1 %>
 								</div>
@@ -31,6 +31,12 @@
 								<%= label_tag :current_password, t('.current_password'), class: 'control-label col-sm-3' %>
 								<div class="col-sm-6">
 									<%= password_field_tag :current_password, nil, class: 'form-control', tabIndex: 3 %>
+								</div>
+							</div>
+							<div class="form-group">
+								<%= f.label :locale, class: 'control-label col-sm-3' %>
+								<div class="col-sm-6">
+									<%= f.select :locale, I18n.available_locales.map {|locale| [t("locales.#{locale}"), locale] },{ }, class: 'form-control',tabIndex: 5 %>
 								</div>
 							</div>
 							<div class="form-group">
