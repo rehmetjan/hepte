@@ -16,7 +16,7 @@
 							<%= render 'share/flash_messages' %>
 							<%= render 'share/form_error_messages', form: f %>
 							<div class="form-group">
-								<%= label_tag :username, t('.username'), class: 'control-label col-sm-3' %>
+								<%= f.label :username, class: 'control-label col-sm-3' %>
 								<div class="col-sm-6">
 									<%= f.text_field :username, class: 'form-control', tabIndex: 1 %>
 								</div>

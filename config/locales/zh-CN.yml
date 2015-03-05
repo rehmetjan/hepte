@@ -348,8 +348,27 @@ zh-CN:
         topics: "话题"
         user_s_topics: "%{name} 的话题"
   books:
-    index:
-        new_books: "新书"
+    form:
+        book_name: "书名"
+        author: "作者"
+        price: "价格"
+        description: "内容介绍"
+        isbn: ISBN
+        book_cover: "书封面"
+        create: "创建"
+    index: 
+        new_books: "新书速递"
     show:
         author: "作者"
         price: "价格"
+        description: "内容介绍"
+        isbn: ISBN
+    new:
+        new_book: "新书"
+        book_name: "书名"
+        author: "作者"
+        price: "价格"
+        description: "内容介绍"
+        isbn: ISBN
+        book_cover: "书封面"
+        create: "创建"

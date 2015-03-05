@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20150303072649) do
     t.string   "author"
     t.string   "picture"
     t.decimal  "price"
+    t.string   "isbn"
     t.text     "description"
     t.decimal  "rate"
     t.datetime "created_at"
