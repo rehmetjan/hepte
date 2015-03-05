@@ -5,6 +5,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :author
       t.string :picture
       t.decimal :price
+      t.string :isbn
       t.text :description
       t.decimal :rate
 
