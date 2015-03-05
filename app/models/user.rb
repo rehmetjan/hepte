@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A[a-z0-9][a-z0-9-]*\z/i }
   validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A([^@\s]+)@((?:[a-z0-9-]+\.)+[a-z]{2,})\z/i }
   
+  def admin?
+    CONFIG['admin_emails'] && CONFIG['admin_emails'].include(email)
+  end
+  
   def self.verifier_for(purpose)
     @verifiers ||= {}
     @verifiers.fetch(purpose) do |p|
