@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150303072649) do
+ActiveRecord::Schema.define(version: 20150305072524) do
 
   create_table "books", force: true do |t|
     t.string   "name"
@@ -23,7 +23,22 @@ ActiveRecord::Schema.define(version: 20150303072649) do
     t.decimal  "rate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "comments_count", default: 0
   end
+
+  create_table "comments", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.text     "body"
+    t.integer  "likes_count"
+    t.boolean  "trashed",          default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email"

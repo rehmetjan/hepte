@@ -17,6 +17,10 @@ Rails.application.routes.draw do
     end
   end
   
+  concern :commentable do
+    resources :comments, only: [:create]
+  end
+  
   namespace :settings do
     resource :password, only: [:show, :update]
     resource :account, only: [:show, :update]
@@ -28,7 +32,7 @@ Rails.application.routes.draw do
     resource :confirmation, only: [:new, :show, :create]
   end
   
-  resources :books
+  resources :books, concerns: [:commentable]
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -4,4 +4,6 @@ class Book < ActiveRecord::Base
   validates :name, presence: true, format: { with: /\A[a-z0-9][a-z0-9-]*\z/i }
   validates :author, presence: true, format: { with: /\A[a-z0-9][a-z0-9-]*\z/i }
   
+  has_many :comments, as: 'commentable'
+  
 end
