@@ -357,3 +357,27 @@ en:
         topics: Topics
         user_s_topics: "%{name}'s topics"
   books:
+    form:
+        book_name: Book Name
+        author: Author
+        price: Price
+        description: Description
+        isbn: ISBN
+        book_cover: Book Cover
+        create: Create
+    index: 
+        new_books: New Books
+    show:
+        author: Author
+        price: Price
+        description: Description
+        isbn: ISBN
+    new:
+        new_book: New Book
+        book_name: Book Name
+        author: Author
+        price: Price
+        description: Description
+        isbn: ISBN
+        book_cover: Book Cover
+        create: Create
