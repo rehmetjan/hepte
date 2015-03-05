@@ -1,0 +1,35 @@
+<% @page_title = t('.user_s_comments'), name: @user.name %>
+
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				
+			</div>
+			<div class="col-md-9">
+				<div id="comments" class="panel">
+					<div class="panel-heading clearfix">
+						<div class="panel-title"><%= t('.comments') %></div>
+					</div>
+				</div>
+				<div class="panel-body">
+					<div class="list-group list-group-hepte">
+						<% if @comments.any %>
+							<%= render @comments %>
+						<% else %>
+							<div class="list-group-item text-center text-muted empty-message">
+								<%= t('.no_comment_yet') %>
+							</div>
+						<% end %>
+					</div>
+				</div>
+				<% if @comments.total_pages > 1 %>
+					<div class="panel-footer clearfix">
+						<div class="pull-right">
+							<%= paginate @comments, theme: 'hepte', params: { anchor: 'comments'} %>
+						</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
