@@ -372,6 +372,7 @@ en:
         price: Price
         description: Description
         isbn: ISBN
+        comments: Comments
     new:
         new_book: New Book
         book_name: Book Name

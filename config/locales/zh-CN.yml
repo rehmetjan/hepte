@@ -363,6 +363,7 @@ zh-CN:
         price: "价格"
         description: "内容介绍"
         isbn: ISBN
+        comments: "评论"
     new:
         new_book: "新书"
         book_name: "书名"
