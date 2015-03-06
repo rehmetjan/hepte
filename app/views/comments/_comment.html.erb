@@ -17,7 +17,7 @@
 				<a class="btn" href="<%= edit_comment_path(comment) %>" data-remote="true" data-visible-to="creator">
 					<i class="fa fa-pencil"></i>
 				</a>
-				<a class="btn" href="<%= trash_comment_path(comment) %>" data-remote="true" data-method="delete" data-visible-to="creator">
+				<a class="btn" href="<%= trash_comment_path(comment) %>" data-remote="true" data-method="delete" data-visible-to="creator" data-confirm="<%= t('.delete_confirm') %>">
 					<i class="fa fa-trash-o"></i>
 				</a>
 			</div>
