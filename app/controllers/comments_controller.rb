@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :login_required, :no_locked_required
-  before_action :find_comment, only: [:edit, :cancel, :update]
+  before_action :find_comment, only: [:edit, :cancel, :update, :trash]
   
   def create
     resource, id = request.path.split('/')[1, 2]
@@ -18,6 +18,10 @@ class CommentsController < ApplicationController
   
   def update
     @comment.update_attributes params.require(:comment).permit(:body)
+  end
+  
+  def trash
+    @comment.destroy
   end
   
   private

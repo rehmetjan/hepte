@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :comments, only: [:edit, :update] do
     member do 
       get :cancel
+      delete :trash
     end
   end
   
