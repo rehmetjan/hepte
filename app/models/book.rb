@@ -6,4 +6,9 @@ class Book < ActiveRecord::Base
   
   has_many :comments, as: 'commentable'
   belongs_to :user
+  
+  def total_pages
+    (comments_count.to_f / Comment.default_per_page).ceil
+  end
+  
 end

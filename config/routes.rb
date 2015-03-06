@@ -21,6 +21,12 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   
+  resources :comments, only: [:edit, :update] do
+    member do 
+      get :cancel
+    end
+  end
+  
   namespace :settings do
     resource :password, only: [:show, :update]
     resource :account, only: [:show, :update]
