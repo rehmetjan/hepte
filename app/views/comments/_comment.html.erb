@@ -14,12 +14,9 @@
 		</article>
 		<div class="list-group-item-actions clearfix">
 			<div class="pull-right">
-				<%= link_to edit_comment_path(comment), :data => { :remote => 'true', :visible_to => 'creator'}, class: 'btn' do %>
+				<a class="btn" href="<%= edit_comment_path(comment) %>" data-remote="true" data-visible-to="creator">
 					<i class="fa fa-pencil"></i>
-				<% end %>
-				<%= link_to comment_path(comment), :data => {:remote => 'true', :method => 'delete', :confirm => 'Are you sure', :visible_to => 'creator'}, class: 'btn' do %>
-					<i class="fa fa-trash"></i>
-				<% end %>
+				</a>
 			</div>
 		</div>
 	</div>

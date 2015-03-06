@@ -1,0 +1,34 @@
+<div class="list-group-item-avatar">
+	<img class="img-rounded" alt="avatar" src="<%= comment.user.avatar.normal.url %>"></img>
+</div>
+<div class="list-group-item-content">
+	<div class="list-group-item-heading">
+		<a class="comment-user" href="<%= user_link(comment.user) %>">
+			<b><%= comment.user.name %></b>
+			<%= "@#{comment.user.username}" %>
+			<%= '.' %>
+			<a href="<%= comment_link(comment) %>"></a>
+		</a>
+	</div>
+	<%= form_for comment, remote: true do |f| %>
+		<div class="form-group">
+			<%= f.text_area :body, class: 'form-control' %>
+		</div>
+		<%= f.submit t('.save_changes'), class: 'btn btn-success', 'data-disable-with' => t('.save_changes') %>
+		<a class="btn btn-default" href="<%= cancel_comment_path(comment) %>" data-remote="true"><%= t('.cancel') %></a>
+	<% end %>
+</div>
+<script>
+$('#edit_comment_#{comment.id}').validate({
+  rules: {
+    'comment[body]': {
+      required: true
+    }
+  },
+  messages: {
+    'comment[body]': {
+      required: '<%= @comment.errors.generate_message :body, :blank %>'
+    }
+  }
+});
+</script>
