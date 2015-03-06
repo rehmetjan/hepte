@@ -1,0 +1,26 @@
+<li class="list-group-item comment" id="comment-<%= comment.id %>" data-creator-id="<%= comment.user_id %>">
+	<a href="<%= user_link(comment.user) %>" class="list-group-item-avatar">
+		<img class="img-rounded" alt="avatar" src="<%= comment.user.avatar.normal.url %>">
+	</a>
+	<div class="list-group-item-content">
+		<div class="list-group-item-heading">
+			<%= link_to user_link(comment.user) do %>
+				<b><%= comment.user.username %></b>
+				<%= "@#{comment.user.username}" %>
+			<% end %>
+		</div>
+		<article class="comment-body">
+			<%= comment.body %>
+		</article>
+		<div class="list-group-item-actions clearfix">
+			<div class="pull-right">
+				<%= link_to edit_comment_path(comment), :data => { :remote => 'true', :visible_to => 'creator'}, class: 'btn' do %>
+					<i class="fa fa-pencil"></i>
+				<% end %>
+				<%= link_to comment_path(comment), :data => {:remote => 'true', :method => 'delete', :confirm => 'Are you sure', :visible_to => 'creator'}, class: 'btn' do %>
+					<i class="fa fa-trash"></i>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</li>
