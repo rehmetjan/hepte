@@ -11,3 +11,23 @@
 	padding: 10px 0;
 	clear: both;
 }
+.list-group-item-actions {
+  .btn {
+    color: $gray-light;
+
+    &:hover {
+      color: $gray-dark;
+    }
+
+    &:active {
+      @include box-shadow(none);
+    }
+  }
+  .liked {
+    color: $brand-danger;
+
+    &:hover {
+      color: $brand-danger;
+    }
+  }
+}

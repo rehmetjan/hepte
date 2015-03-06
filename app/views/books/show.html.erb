@@ -5,6 +5,11 @@
 				<div class="panel">
 					<div class="panel-heading">
 						<h1 class="panel-title"><%= @book.name %></h1>
+						<div class="pull-right list-group-item-actions">
+							<a class="btn" id="like-for-book-<%= @book.id %>" href="<%= book_like_path(@book) %>" data-remote="true" data-method="post">
+								<i class="fa fa-heart fa-lg"></i>
+							</a>
+						</div>
 					</div>
 					<div class="panel-body">
 						<div class="col-sm-6">

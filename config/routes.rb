@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   
+  concern :likeable do 
+    resource :like, only: [:create, :destroy]
+  end
+  
   resources :comments, only: [:edit, :update] do
     member do 
       get :cancel
@@ -39,7 +43,7 @@ Rails.application.routes.draw do
     resource :confirmation, only: [:new, :show, :create]
   end
   
-  resources :books, concerns: [:commentable]
+  resources :books, concerns: [:commentable, :likeable]
   
   scope path: '~:username', module: 'users', as: 'user' do
     resources :comments, only: [:index]
