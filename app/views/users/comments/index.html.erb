@@ -1,4 +1,4 @@
-<% @page_title = t('.user_s_comments'), name: @user.name %>
+<% @page_title = t '.user_s_comments' , name: @user.name %>
 
 <div class="main">
 	<div class="container">
@@ -29,6 +29,7 @@
 							<%= paginate @comments, theme: 'hepte', params: { anchor: 'comments'} %>
 						</div>
 					</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

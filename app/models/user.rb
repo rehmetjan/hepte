@@ -4,14 +4,26 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   
   has_secure_password
+  has_many :books
+  has_many :comments, dependent: :destroy
   
   validates :username, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A[a-z0-9][a-z0-9-]*\z/i }
   validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A([^@\s]+)@((?:[a-z0-9-]+\.)+[a-z]{2,})\z/i }
   
-  has_many :books
-  
   def admin?
     CONFIG['admin_emails'] && CONFIG['admin_emails'].include(email)
+  end
+  
+  def lock
+    update_attributes :locked_at, current_time_from_proper_timezone
+  end
+  
+  def unlock
+    update_attributes :locked_at, nil
+  end
+  
+  def locked?
+    locked_at.present?
   end
   
   def self.verifier_for(purpose)

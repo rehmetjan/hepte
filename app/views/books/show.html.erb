@@ -29,19 +29,55 @@
 						<h3 class="panel-title"><%= t('.comments') %></h3>
 					</div>
 					<div class="panel-body">
-						<div class="list-group list-group-hepte">
-							<div class="list-group-item comment" data-creator-id="<%= @book.user_id %>">
-								<a href="<%= user_link(@book.user) %>">
-									<img class="img-rounded" src="<%= @book.user.avatar.normal.url %>"></img>
-								</a>
-							</div>
-						</div>
+						<ul class="list-group list-group-hepte" id="comments-for-book-<%= @book.id %>">
+							<% if @comments.any? %>
+								<%= render @comments %>
+							<% else %>
+								<li class="list-group-item text-center text-muted empty-message">
+									<%=  t('.no_comment_yet') %>
+								</li>
+							<% end %>
+						</ul>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="panel-body">
+						<% if login? %>
+							<% unless current_user.locked? %>
+								<div class="list-group list-group-hepte">
+									<div class="list-group-item comment">
+										<a class="list-group-item-avatar" href="<%= user_link(current_user) %>">
+											<img class="img-rouded" src="<%= current_user.avatar.normal.url %>" alt="avatar"></img>
+										</a>
+										<div class="list-group-item-content">
+											<div class="list-group-item-heading">
+												<a href="<%= user_link(current_user) %>">
+													<b><%= current_user.name %></b>
+													@<%= current_user.name %>
+												</a>
+											</div>
+											<%= form_for @book.comments.new, url: book_comments_path(@book), remote: true do |f| %>
+												<div class="form-group">
+													<%= f.text_area :body, class: 'form-control' %>
+												</div>
+												<%= f.submit t('.add_this_comment'), class: 'btn btn-success', 'data-disable-with' => t('.add_this_comment') %>
+											<% end %>
+										</div>
+									</div>
+								</div>
+								<% else %>
+									<%= t('.your_account_had_been_locked') %>
+								<% end %>
+							<% else %>
+							<a href="<%= signup_path(return_to: request.fullpath) %>"><%= t('.signup') %></a>
+							<%= t('.or') %>
+							<a href="<%= login_path(return_to: request.fullpath) %>"><%= t('.login') %></a>
+						<% end %>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="panel">
-				</div>
+				
 			</div>
 		</div>
 	</div>

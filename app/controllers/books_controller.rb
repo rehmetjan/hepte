@@ -1,5 +1,4 @@
 class BooksController < ApplicationController
-  before_action :login_required
   before_action :find_book, only: [:show, :edit, :update]
   
   def index
@@ -17,6 +16,15 @@ class BooksController < ApplicationController
       redirect_to @book
     else
       render :new
+    end
+  end
+  
+  def show
+    @book = Book.find params[:id]
+    @comments = @book.comments.includes(:user).order(id: :asc).page(params[:page])
+    
+    respond_to do |format|
+      format.html
     end
   end
   

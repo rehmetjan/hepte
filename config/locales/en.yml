@@ -373,6 +373,7 @@ en:
         description: Description
         isbn: ISBN
         comments: Comments
+        add_this_comment: Add this comment
     new:
         new_book: New Book
         book_name: Book Name
