@@ -25,6 +25,12 @@ class ApplicationController < ActionController::Base
     @current_user = user
   end
   
+  def no_locked_required
+    if login? and current_user.locked?
+      raise AccessDenied
+    end
+  end
+  
   def login_required
     unless login?
       redirect_to login_path(return_to: (request.fullpath if request.get?))

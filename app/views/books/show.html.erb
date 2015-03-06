@@ -31,7 +31,7 @@
 					<div class="panel-body">
 						<div class="list-group list-group-hepte">
 							<div class="list-group-item comment" data-creator-id="<%= @book.user_id %>">
-								<a href="<%= user_path(@book.user) %>">
+								<a href="<%= user_link(@book.user) %>">
 									<img class="img-rounded" src="<%= @book.user.avatar.normal.url %>"></img>
 								</a>
 							</div>

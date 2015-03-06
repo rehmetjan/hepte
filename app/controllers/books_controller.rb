@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :login_required
   before_action :find_book, only: [:show, :edit, :update]
   
   def index

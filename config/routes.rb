@@ -9,8 +9,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   
   root 'books#index'
-  get '~:username', to: 'users#show', as: :user
-  
+ 
   resources :users, only: [:create] do
     collection do
       get :check_email
@@ -34,4 +33,9 @@ Rails.application.routes.draw do
   end
   
   resources :books, concerns: [:commentable]
+  
+  scope path: '~:username', module: 'users', as: 'user' do
+    resources :comments, only: [:index]
+    root to: 'comments#index'
+  end
 end
