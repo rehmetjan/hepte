@@ -1,0 +1,3 @@
+<% if @book.errors.empty? %>
+	Turbolinks.visit('<%= book_path(@book) %>');
+<% end %>

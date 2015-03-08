@@ -4,10 +4,10 @@
 	</a>
 	<div class="list-group-item-content">
 		<div class="list-group-item-heading">
-			<%= link_to user_link(comment.user) do %>
+			<a class="comment-user" href="<%= user_link(comment.user) %>">
 				<b><%= comment.user.username %></b>
 				<%= "@#{comment.user.username}" %>
-			<% end %>
+			</a>
 		</div>
 		<article class="comment-body">
 			<%= comment.body %>

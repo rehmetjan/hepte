@@ -18,7 +18,8 @@
 							</div>
 							<div id="info">
 								<span class="pl"><%= t('.author') %>: </span><%= @book.author %><br>
-								<span class="pl"><%= t('.price') %>: </span><%= @book.price %>
+								<span class="pl"><%= t('.price') %>: </span><%= @book.price %><br>
+								<span class="pl"><%= t('.isbn') %>: </span><%= @book.isbn %>
 							</div>
 						</div>
 						<div class="description">
@@ -87,3 +88,10 @@
 		</div>
 	</div>
 </div>
+	<% if login? %>
+		<% if @book.liked_by?(current_user) %>
+			<script>
+				hepte.Likes.updateLike('book', <%= @book.id %>);
+			</script>
+		<% end %>
+	<% end %>

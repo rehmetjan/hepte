@@ -12,4 +12,8 @@ class Book < ActiveRecord::Base
     (comments_count.to_f / Comment.default_per_page).ceil
   end
   
+  def liked_by?(user)
+    likes.where(user: user).exists?
+  end
+  
 end
