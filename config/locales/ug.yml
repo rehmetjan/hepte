@@ -21,7 +21,7 @@ ug:
         created_at: Created at
         email: Email
         locale: Locale
-        name: Name
+        name: ئىسىم
         password: پارول
         password_confirmation: يەنە پارول
         username: ئەزا نامى
@@ -34,8 +34,7 @@ ug:
             email:
               format: ئىناۋەتسىز ئىلخەت ئادرىس فورماتى
             username:
-              format: may only contain alphanumeric characters or dashes and cannot
-                begin with a dash
+              format: ئەزا نامى نومۇر، ھەرىپ ۋە ئوتتۇرا سىزىق
   admin:
     attachments:
       index:
@@ -175,20 +174,20 @@ ug:
   sessions:
     access_limiter:
       are_you: Are you
-      forgot_password: forgot password?
+      forgot_password: پارول ئۇنتۇلغان؟
       try_too_many_times: Try too many times
     flashes:
-      incorrect_user_name_or_password: Incorrect user name or password
+      incorrect_user_name_or_password: ئىناۋەتسىز ئەزا نامى ياكى پارول
     new:
-      forgot_password: Forgot password
-      login: Login
-      password: Password
-      sign_in: Sign in
-      username_or_email: Username or email
+      forgot_password: پارول ئۇنتۇلغان؟
+      login: كىرىش
+      password: پارول
+      sign_in: كىرىش
+      username_or_email: Email ئەزا نامى ياكى
   settings:
     accounts:
       flashes:
-        successfully_updated: Successfully updated
+        successfully_updated: يېڭىلاندى
       show:
         account: ھېسابات
         account_settings: ھېسابات تەڭشىكى
@@ -220,7 +219,7 @@ ug:
         save_changes: ساقلاش
     profiles:
       flashes:
-        successfully_updated: Successfully updated
+        successfully_updated: يېڭىلاندى
       show:
         profile: ئارخىپ
         profile_settings: ئارخىپ تەڭشىكى
@@ -232,8 +231,8 @@ ug:
       profile: ئارخىپ
   share:
     user_confirm_required:
-      change_email: ئىلخەت ئۆزگەرتىش
-      description: بارلىق ئىقتىدارلارنى ئىشلىتىش ئۈچۈن ئىلخەت ئادرىسىڭىزنى جەزىملەشتۈرۈڭ. جەزىملەشتۈرۈش ئۇچۇرى %{email} گە ئەۋەتىلدى.
+      change_email: Email ئۆزگەرتىش
+      description: بارلىق ئىقتىدارلارنى ئىشلىتىش ئۈچۈن Email ئادرىسىڭىزنى جەزىملەشتۈرۈڭ. جەزىملەشتۈرۈش ئۇچۇرى %{email} گە ئەۋەتىلدى 
       resend_email: قايتا ئەۋەتىش
   subscriptions:
     subscription:
@@ -274,12 +273,12 @@ ug:
       add_this_comment: Add this comment
       comments: Comments
       delete_confirm: Are you sure you want to delete this topic?
-      login: Login
+      login: كىرىش
       no_comment_yet: No comment yet
       no_more_topics: No more topics
       or: Or
       related_topics: Related topics
-      sign_up: Sign up
+      sign_up: كىرىش
       to_comment: To comment
       your_account_had_been_locked: Your account had been locked
     topic:
@@ -312,7 +311,7 @@ ug:
     confirmations:
       confirm_success: Confirm success
       create:
-        resend_success: Resend success
+        resend_success: قايتا ئەۋەتىلدى
       limiter:
         resend_limiter: Resend limiter
       new:
@@ -321,30 +320,28 @@ ug:
         need_confirm_email: Need confirm Email
       show:
         confirm_fail: Confirm fail
-        confirmation_toke_invalid_or_expired_please_resend: Confirmation toke invalid
-          or expired, please resend.
+        confirmation_toke_invalid_or_expired_please_resend: جەزىملەش كودى ئىناۋتسىز ياكى ۋاقتى ئۆتكەن. قايتا جەزىملەڭ
     new:
-      choose_a_password: Choose a password
-      create_account: Create account
-      pick_a_username: Pick a username
-      sign_up: Sign up
-      your_email: Your email
-      your_full_name: Your full name
+      choose_a_password: پارول كىرگۈزۈڭ
+      create_account: تىزىملىتىش
+      pick_a_username: ئەزا نامى تاللاڭ
+      sign_up: تىزىملىتىش
+      your_email: ئىلخەت
+      your_full_name: ئىسمىڭىز
     passwords:
       edit:
-        password_reset: Password reset
-        save_changes: Save changes
+        password_reset: پارول 
+        save_changes: ساقلاش
       new:
-        email: Email
-        password_reset: Password reset
-        send_reset_email: Send reset email
-        your_email: Your email
+        email: ئادرىسى Email
+        password_reset: پارول قايتۇرۇش
+        send_reset_email: پارول قايتۇرۇش ئىلخەت ئەۋەتىش
+        your_email: ئىلخەت ئادرىسى
       show:
-        password_reset: Password reset
-        password_reset_email_has_been_sent_message: Password reset email has been
-          sent.
+        password_reset: پارول قايتۇرۇش
+        password_reset_email_has_been_sent_message: پارول قايتۇرۇش ئېلخەتى ئەۋەتىلدى
     profile:
-      edit_profile: Edit profile
+      edit_profile: ئارخىپ تەھرىرلەش
     sidebar:
       comments: Comments
       topics: Topics
