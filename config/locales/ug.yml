@@ -20,7 +20,7 @@ ug:
         bio: تەرجىمھال
         created_at: Created at
         email: Email
-        locale: Locale
+        locale: توربەت تىلى
         name: ئىسىم
         password: پارول
         password_confirmation: يەنە پارول
@@ -214,7 +214,7 @@ ug:
         successfully_updated: يېڭىلاندى
       show:
         current_password: ھازىرقى پارول
-        password: پارول
+        password: يېڭى پارول
         password_settings: پارول تەڭشىكى
         save_changes: ساقلاش
     profiles:

@@ -11,20 +11,20 @@
 							<%= render 'share/flash_messages' %>
 							<%= render 'share/form_error_messages', form: f %>
 							<div class="form-group">
-								<%= label_tag :current_password, t('.current_password'), class: 'control-label col-sm-3' %>
-								<div class="col-sm-6">
+								<%= label_tag :current_password, t('.current_password'), class: 'control-label col-sm-3 pull-right' %>
+								<div class="col-sm-6 pull-right">
 									<%= password_field_tag :current_password, nil, class: 'form-control', tabIndex: 1 %>
 								</div>
 							</div>
 							<div class="form-group">
-								<%= f.label :password, class: 'control-label col-sm-3' %>
-								<div class="col-sm-6">
+								<%= f.label :password, class: 'control-label col-sm-3 pull-right' %>
+								<div class="col-sm-6 pull-right">
 									<%= f.password_field :password, class: 'form-control', tabIndex: 2 %>
 								</div>
 							</div>
 							<div class="form-group">
-								<%= f.label :password_confirmation, class: 'control-label col-sm-3' %>
-								<div class="col-sm-6">
+								<%= f.label :password_confirmation, class: 'control-label col-sm-3 pull-right' %>
+								<div class="col-sm-6 pull-right">
 									<%= f.password_field :password_confirmation, class: 'form-control', tabIndex: 3 %>
 								</div>
 							</div>

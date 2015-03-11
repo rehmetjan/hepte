@@ -12,26 +12,26 @@
 							<%= render 'share/flash_messages' %>
 							<%= render 'share/form_error_messages', form: f %>
 							<div class="form-group">
-								<%= f.label :username, class: 'control-label col-sm-3' %>
-								<div class="col-sm-6">
+								<%= f.label :username, class: 'control-label col-sm-3 pull-right' %>
+								<div class="col-sm-6 pull-right">
 									<%= f.text_field :username, class: 'form-control', tabIndex: 1 %>
 								</div>
 							</div>
 							<div class="form-group">
-								<%= f.label :email, class: 'control-label col-sm-3' %>
-								<div class="col-sm-6">
+								<%= f.label :email, class: 'control-label col-sm-3 pull-right' %>
+								<div class="col-sm-6 pull-right">
 									<%= f.text_field :email, class: 'form-control', tabIndex: 2 %>
 								</div>
 							</div>
 							<div class="form-group">
-								<%= label_tag :current_password, t('.current_password'), class: 'control-label col-sm-3' %>
-								<div class="col-sm-6">
+								<%= label_tag :current_password, t('.current_password'), class: 'control-label col-sm-3 pull-right' %>
+								<div class="col-sm-6 pull-right">
 									<%= password_field_tag :current_password, nil, class: 'form-control', tabIndex: 3 %>
 								</div>
 							</div>
 							<div class="form-group">
-								<%= f.label :locale, class: 'control-label col-sm-3' %>
-								<div class="col-sm-6">
+								<%= f.label :locale, class: 'control-label col-sm-3 pull-right' %>
+								<div class="col-sm-6 pull-right">
 									<%= f.select :locale, I18n.available_locales.map {|locale| [t("locales.#{locale}"), locale] },{ }, class: 'form-control',tabIndex: 5 %>
 								</div>
 							</div>
