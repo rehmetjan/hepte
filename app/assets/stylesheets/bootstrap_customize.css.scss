@@ -283,11 +283,11 @@ body {
   }
 
   .list-group-item-avatar {
-    float: left;
+    float: right;
   }
 
   .list-group-item-avatar + .list-group-item-content {
-    margin-left: 60px;
+    margin-right: 60px;
   }
 
   .list-group-item-actions {
