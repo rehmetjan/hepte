@@ -1,20 +1,20 @@
 <div class="list-group">
 	<a class="list-group-item <%= 'active' if controller_name == 'accounts' %>" href="<%= settings_account_path %>">
-		<div class="pull-right">
-			<i class="fa fa-chevron-right"></i>
-		</div>
 		<%= t('.account') %>
+		<div class="pull-left">
+			<i class="fa fa-chevron-left"></i>
+		</div>
 	</a>
 	<a class="list-group-item <%= 'active' if controller_name == 'passwords' %>" href="<%= settings_password_path %>">
-		<div class="pull-right">
-			<i class="fa fa-chevron-right"></i>
-		</div>
 		<%= t('.password') %>
+		<div class="pull-left">
+			<i class="fa fa-chevron-left"></i>
+		</div>
 	</a>
 	<a class="list-group-item <%= 'active' if controller_name == 'profiles' %>" href="<%= settings_profile_path %>">
-		<div class="pull-right">
-			<i class="fa fa-chevron-right"></i>
-		</div>
 		<%= t('.profile') %>
+		<div class="pull-left">
+			<i class="fa fa-chevron-left"></i>
+		</div>
 	</a>
 </div>
