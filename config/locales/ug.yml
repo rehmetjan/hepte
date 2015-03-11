@@ -224,6 +224,7 @@ ug:
         profile: ئارخىپ
         profile_settings: ئارخىپ تەڭشىكى
         save_changes: ساقلاش
+        remove_avatar: باش سۈرەت ئۆچۈرۈش
     sidebar:
       account: ھېسابات
       notifications: ئۇقتۇرۇش
@@ -370,6 +371,10 @@ ug:
         isbn: ISBN
         comments: ئىنكاسلار
         add_this_comment: ئىنكاس ئەۋەتىش
+        signup: تىزىملىتىش
+        login: كىرىش
+        or: ياكى
+        no_comment_yet: ھازىرچە ئىنكاس يوق
     new:
         new_book: يېڭى كىتاب
         book_name: كىتاب نامى

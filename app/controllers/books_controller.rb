@@ -12,7 +12,7 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.create book_params
     if @book.save
-      flash[:success] = 'New book saved!'
+      flash.now[:success] = I18n.t('.new_book_saved')
       redirect_to @book
     else
       render :new

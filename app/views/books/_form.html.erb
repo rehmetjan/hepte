@@ -30,21 +30,17 @@
 		rules: {
 			'book[name]': {
 				required: true,
-				format: /^[a-z0-9-]+$/i
 			},
 			'book[author]': {
 				required: true,
-				format: /^[a-z0-9-]+$/i
 			}
 		},
 		messages: {
 			'book[name]': {
 				required: '<%= @book.errors.generate_message :name, :blank %>',
-				format: '<%= @book.errors.generate_message :name, :format %>'
 			},
 			'book[author]': {
 				required: '<%= @book.errors.generate_message :author, :blank %>',
-				format: '<%= @book.errors.generate_message :author, :format %>'
 			}
 		}
 	});
