@@ -314,13 +314,12 @@ ug:
       create:
         resend_success: قايتا ئەۋەتىلدى
       limiter:
-        resend_limiter: Resend limiter
+        resend_limiter: بىر مىنۇتتا بىرلا قېتىم ئەۋەتەتىلىدۇ
       new:
-        click_resend_button_to_resend_confirmation_email: Click "Resend Email" button
-          to resend confirmation email
-        need_confirm_email: Need confirm Email
+        click_resend_button_to_resend_confirmation_email: «قايتا ئەۋەتىش» كۇنۇپكىسىنى بېسىپ جەزىملەشتۈرۈش ئۇچۇرىنى ئەۋەتىڭ
+        need_confirm_email: Email ئادرىسىنى جەزىملەشتۈرۈش
       show:
-        confirm_fail: Confirm fail
+        confirm_fail: جەزىملەشتۈرۈش مەغلۇب بولدى
         confirmation_toke_invalid_or_expired_please_resend: جەزىملەش كودى ئىناۋتسىز ياكى ۋاقتى ئۆتكەن. قايتا جەزىملەڭ
     new:
       choose_a_password: پارول كىرگۈزۈڭ

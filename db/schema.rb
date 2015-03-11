@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306090522) do
+ActiveRecord::Schema.define(version: 20150311090258) do
 
   create_table "books", force: true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150306090522) do
     t.integer  "comments_count", default: 0
     t.integer  "user_id"
     t.integer  "likes_count"
+    t.float    "hot",            default: 0.0
   end
 
   add_index "books", ["user_id"], name: "index_books_on_user_id"

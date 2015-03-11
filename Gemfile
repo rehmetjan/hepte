@@ -40,6 +40,12 @@ gem 'kaminari', '~> 0.15.1'
 gem 'http_accept_language', '~> 2.0.1'
 # i18n
 gem 'rails-i18n', '~> 4.0.1'
+# redis
+gem 'redis', '~> 3.0.7'
+gem 'hiredis', '~> 0.4.5'
+# Background jobs
+gem 'resque', '~> 1.25.1'
+gem 'resque_mailer', '~> 2.2.6'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 

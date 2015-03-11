@@ -1,5 +1,6 @@
 class Users::ConfirmationsController < ApplicationController
   before_action :login_required, :no_confirmed_required
+  before_action :access_limiter, only: [:create]
   
   def show
     if params[:token].present?
@@ -24,4 +25,15 @@ class Users::ConfirmationsController < ApplicationController
     end
   end
   
+  def access_limiter
+    key = "verifies:limiter:#{request.remote_ip}"
+    if $redis.get(key).to_i > 0
+      render :limiter
+    else
+      $redis.incr(key)
+      if $redis.ttl(key) == -1
+        $redis.expire(key, 60)
+      end
+    end
+  end
 end
