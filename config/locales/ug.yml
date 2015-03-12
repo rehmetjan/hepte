@@ -32,7 +32,7 @@ ug:
         user:
           attributes:
             email:
-              format: ئىناۋەتسىز ئىلخەت ئادرىس فورماتى
+              format: ئىناۋەتسىز ئىلخەت ئادرېس فورماتى
             username:
               format: ئەزا نامى نومۇر، ھەرىپ ۋە ئوتتۇرا سىزىق
   admin:
@@ -233,7 +233,7 @@ ug:
   share:
     user_confirm_required:
       change_email: Email ئۆزگەرتىش
-      description: بارلىق ئىقتىدارلارنى ئىشلىتىش ئۈچۈن Email ئادرىسىڭىزنى جەزىملەشتۈرۈڭ. جەزىملەشتۈرۈش ئۇچۇرى %{email} گە ئەۋەتىلدى 
+      description: بارلىق ئىقتىدارلارنى ئىشلىتىش ئۈچۈن Email ئادرېسىڭىزنى جەزىملەشتۈرۈڭ. جەزىملەشتۈرۈش ئۇچۇرى %{email} گە ئەۋەتىلدى 
       resend_email: قايتا ئەۋەتىش
   subscriptions:
     subscription:
@@ -317,7 +317,7 @@ ug:
         resend_limiter: بىر مىنۇتتا بىرلا قېتىم ئەۋەتەتىلىدۇ
       new:
         click_resend_button_to_resend_confirmation_email: «قايتا ئەۋەتىش» كۇنۇپكىسىنى بېسىپ جەزىملەشتۈرۈش ئۇچۇرىنى ئەۋەتىڭ
-        need_confirm_email: Email ئادرىسىنى جەزىملەشتۈرۈش
+        need_confirm_email: Email ئادرېسىنى جەزىملەشتۈرۈش
       show:
         confirm_fail: جەزىملەشتۈرۈش مەغلۇب بولدى
         confirmation_toke_invalid_or_expired_please_resend: جەزىملەش كودى ئىناۋتسىز ياكى ۋاقتى ئۆتكەن. قايتا جەزىملەڭ
@@ -333,10 +333,10 @@ ug:
         password_reset: پارول 
         save_changes: ساقلاش
       new:
-        email: Email ئادرىسى
+        email: Email ئادرېسى
         password_reset: پارول قايتۇرۇش
         send_reset_email: پارول قايتۇرۇش Email  ئەۋەتىش
-        your_email: Email ئادرىسىڭىز
+        your_email: Email ئادرېسىڭىز
       show:
         password_reset: پارول قايتۇرۇش
         password_reset_email_has_been_sent_message: پارول قايتۇرۇش Email ئەۋەتىلدى

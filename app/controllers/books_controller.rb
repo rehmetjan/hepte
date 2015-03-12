@@ -1,9 +1,10 @@
 class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update]
+  before_action :email_confirmed_required, only: [:new]
   
   def index
     @new_books = Book.last(12)
-    @hot_books = Book.order(hot: :desc)
+    @hot_books = Book.order(hot: :desc).limit(12)
   end
   
   def new
