@@ -2,7 +2,8 @@ class BooksController < ApplicationController
   before_action :find_book, only: [:show, :edit, :update]
   
   def index
-    @books = Book.all
+    @new_books = Book.last(12)
+    @hot_books = Book.order(hot: :desc)
   end
   
   def new

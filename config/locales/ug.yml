@@ -363,6 +363,7 @@ ug:
         create: ساقلاش
     index: 
         new_books: يېڭى كىتابلار
+        hot_books: ئاۋات كىتابلار
     show:
         author: ئاپتور
         price: باھا
