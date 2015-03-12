@@ -302,6 +302,9 @@ ug:
 
         %{url}
   users:
+    books:
+      index:
+        user_s_books: كىتابلىرىم
     comments:
       index:
         comments: Comments

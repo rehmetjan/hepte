@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   
   scope path: '~:username', module: 'users', as: 'user' do
     resources :comments, only: [:index]
-    root to: 'comments#index'
+    root to: 'books#index'
   end
   
   constraints(AdminConstraint) do

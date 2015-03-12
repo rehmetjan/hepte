@@ -1,0 +1,21 @@
+<div class="panel user-profile">
+	<div class="panel-body">
+		<div class="user-profile-avatar">
+			<img class="img-rounded" alt="avatar" src="<%= user.avatar.bigger.url %>"></img>
+		</div>
+		<div class="user-profile-name">
+			<%= user.name %>
+			<span class="text-muted">@<%= user.username %></span>
+		</div>
+		<div class="user-profile-bio">
+			<%= user.bio %>
+		</div>
+	</div>
+	<% if login? and user == current_user %>
+		<div class="panel-footer clearfix">
+			<div class="pull-right">
+				<a class="btn btn-default" href="<%= settings_profile_path %>"><%= t('.edit_profile') %></a>
+			</div>
+		</div>
+	<% end %>
+</div>
