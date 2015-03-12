@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A([^@\s]+)@((?:[a-z0-9-]+\.)+[a-z]{2,})\z/i }
   
   def admin?
-    CONFIG['admin_emails'] && CONFIG['admin_emails'].include(email)
+    CONFIG['admin_emails'] && CONFIG['admin_emails'].include?(email)
   end
   
   def lock

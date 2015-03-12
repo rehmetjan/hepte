@@ -1,8 +1,14 @@
-Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+class AdminConstraint
+  def self.matches?(request)
+    if request.session[:user_id]
+      user = User.find request.session[:user_id]
+      user && user.admin?
+    end
+  end
+end
 
-  # You can have the root of your site routed with "root"
+Rails.application.routes.draw do
+  
   get 'signup', to: 'users#new', as: 'signup'
   get 'login', to: 'sessions#new', as: 'login'
   post 'login', to: 'sessions#create'
@@ -49,4 +55,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:index]
     root to: 'comments#index'
   end
+  
+  constraints(AdminConstraint) do
+    mount Resque::Server.new, at: 'resque'
+  end
+  
 end

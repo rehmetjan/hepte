@@ -113,8 +113,8 @@ ug:
     comment:
       delete_confirm: Are you sure you want to delete this comment?
     form:
-      cancel: Cancel
-      save_changes: Save changes
+      cancel: بولدىلا
+      save_changes: ساقلاش
   helpers:
     comments:
       deleted_entry: "[Deleted entry]"

@@ -1,4 +1,5 @@
 class UserMailer < ActionMailer::Base
+  include Resque::Mailer
   
   def password_reset(user_id)
     @user = User.find(user_id)
