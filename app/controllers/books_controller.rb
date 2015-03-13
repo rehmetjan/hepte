@@ -3,14 +3,14 @@ class BooksController < ApplicationController
   before_action :email_confirmed_required, only: [:new]
   
   def index
-    @books = Topic.includes(:category).page(params[:page])
+    @books = Book.includes(:category).page(params[:page])
     
     @new_books = Book.last(12)
     @hot_books = Book.order(hot: :desc).limit(12)
   end
   
   def new
-    @category = Category.where('lower(slug) = ?', params[:category_id].downcase.first if params[:category_id].present?)
+    @category = Category.where('lower(slug) = ?', params[:category_id].downcase).first if params[:category_id].present?
     @book = Book.new category: @category
   end
   
@@ -49,6 +49,6 @@ class BooksController < ApplicationController
   end
   
   def book_params
-    params.require(:book).permit(:name, :author, :price, :picture, :description, :isbn)
+    params.require(:book).permit(:name, :author, :price, :picture, :description, :isbn, :category_id)
   end
 end

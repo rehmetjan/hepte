@@ -364,6 +364,7 @@ ug:
         isbn: ISBN
         book_cover: كىتاب مۇقاۋىسى
         create: ساقلاش
+        no_category: كاتىگورىيە يوق
     index: 
         new_books: يېڭى كىتابلار
         hot_books: ئاۋات كىتابلار

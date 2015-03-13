@@ -17,6 +17,9 @@
 		<%= f.text_field :isbn, placeholder: t('.isbn'), class: 'form-control' %>
 	</div>
 	<div class="form-group">
+		<%= f.collection_select :category_id, Category.order(books_count: :desc), :id, :name, { include_blank: t('.no_category')}, class: 'form-control' %>
+	</div>
+	<div class="form-group">
 		<label class="control-label"><%= t('.book_cover') %></label>
 		<%= f.file_field :picture %>
 	</div>
