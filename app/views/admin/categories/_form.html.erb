@@ -1,0 +1,28 @@
+<%= form_for category, url: url_for([:admin, category]), html: { class: 'category-form'} do |f| %>
+	<%= render 'share/flash_messages' %>
+	<%= render 'share/form_error_messages', form: f %>
+	<div class="form-group">
+		<%= f.label :name %>
+		<%= f.text_field :name, class: 'form-control', tabIndex: 1 %>
+	</div>
+	<div class="form-group">
+		<%= f.label :slug %>
+		<%= f.text_field :slug, class: 'form-control', tabIndex: 2 %>
+	</div>
+	<% unless @category.new_record? %>
+		<div class="form-group">
+			<%= f.label :books_count %>
+			<%= f.text_field :books_count, class: 'form-control', disable: true %>
+		</div>
+	<div class="clearfix">
+		<% if @category.new_record? %>
+			<%= f.submit t('.create_category'), class: 'btn btn-success', tabIndex: 3 %>
+		<% else %>
+			<%= f.submit t('.save_category'), class: 'btn btn-success', tabIndex: 3 %>
+			<div class="pull-right">
+				<a class="btn btn-danger" href="<%= admin_category_path(@category) %>" data-method="delete" data-confirm="<%= t('permanently_delete_confirm') %>"><%= t('.permanently_delete') %></a>
+			</div>
+		<% end %>
+	</div>
+		
+<% end %>
