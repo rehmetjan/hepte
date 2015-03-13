@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+  <title><%= @page_title? "#{@page_title} - #{CONFIG['title']}" : "#{CONFIG['title']}" %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<% if login? %>
+		<script>
+			hepte.currentUser = {
+				id: <%= current_user.id %>
+			}
+		</script>
+	<% end %>
+</head>
+	<body>
+		<div class="nav navbar navbar-static-top navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="<%= admin_root_path %>"><%= t('.admin'), name: CONFIG['title'] %></a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="<%= root_path %>"><i class="fa fa-sign-out"></i></a></li>
+					<li class="navbar-toggle">
+						<a class="tiem" type="button" data-toggle="collapse" data-target="#navbar">
+							<i class="fa fa-bars"></i>
+						</a>
+					</li>
+				</ul>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar">
+						<li class="<%= 'active' if controller_name == 'users' %>">
+							<a href="<%= admin_users_path %>"><%= t('.users') %></a>
+						</li>
+						<li class="<%= 'active' if controller_name == 'categories' %>">
+							<a href="<%= admin_categories_path %>"><%= t('.categories') %></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<%= yield %>
+	</body>
+</html>
