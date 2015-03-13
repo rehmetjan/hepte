@@ -8,8 +8,14 @@
 @import "books";
 @import "comments";
 
+@font-face {
+	font-family: 'UKIJ Tuz Tom';
+	src: url(UKIJTuT.ttf) format("truetype");
+}
+
 body {
   background: #eee;
+	font-family: "UKIJ Tuz Tom","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
 .text-hide-overflow {

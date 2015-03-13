@@ -182,7 +182,7 @@ ug:
       login: كىرىش
       password: پارول
       sign_in: كىرىش
-      username_or_email: Email ئەزا نامى ياكى
+      username_or_email: Email ياكى ئەزا نامى
   settings:
     accounts:
       flashes:
@@ -328,7 +328,7 @@ ug:
       create_account: تىزىملىتىش
       pick_a_username: ئەزا نامى تاللاڭ
       sign_up: تىزىملىتىش
-      your_email: ئىلخەت
+      your_email: Email ئادرېسى
       your_full_name: ئىسمىڭىز
     passwords:
       edit:
