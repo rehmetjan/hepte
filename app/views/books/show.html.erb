@@ -5,13 +5,6 @@
 				<div class="panel">
 					<div class="panel-heading">
 						<h1 class="panel-title"><%= @book.name %></h1>
-						<% if login? %>
-							<div class="list-group-item-actions pull-left">
-							<a class="btn" id="like-for-book-<%= @book.id %>" href="<%= book_like_path(@book) %>" data-remote="true" data-method="post">
-								<i class="fa fa-heart fa-lg"></i>
-							</a>
-						</div>
-						<% end %>
 					</div>
 					<div class="panel-body book">
 						<div class="col-sm-3 pull-right">
@@ -30,6 +23,18 @@
 								<%= @book.description %>
 							</article>
 						</div>
+					</div>
+					<div class="panel-footer" data-creator-id="<%= @book.user_id %>">
+						<% if login? %>
+						<div class="list-group-item-actions">							
+							<a class="btn" id="like-for-book-<%= @book.id %>" href="<%= book_like_path(@book) %>" data-remote="true" data-method="post">
+								<i class="fa fa-heart fa-lg"></i>
+							</a>							
+							<a class="btn" data-visible-to="creator" href="<%= edit_book_path(@book) %>">
+								<i class="fa fa-pencil"></i>
+							</a>
+						</div>
+						<% end %>
 					</div>
 				</div>
 				<div id="comments" class="panel">
