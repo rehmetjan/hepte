@@ -1,0 +1,18 @@
+<% @page_title = t('.new_category') %>
+
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-push-2">
+				<div class="panel">
+					<div class="panel-heading">
+						<h3 class="panel-title"><%= t('.new_category') %></h3>
+					</div>
+					<div class="panel-body">
+						<%= render 'form', category: @category %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -14,6 +14,7 @@
 			<%= f.label :books_count %>
 			<%= f.text_field :books_count, class: 'form-control', disable: true %>
 		</div>
+	<% end %>
 	<div class="clearfix">
 		<% if @category.new_record? %>
 			<%= f.submit t('.create_category'), class: 'btn btn-success', tabIndex: 3 %>
@@ -26,3 +27,24 @@
 	</div>
 		
 <% end %>
+
+<script>
+$('form.category-form').validate({
+  rules: {
+    'category[name]': {
+      required: true
+    },
+    'category[slug]': {
+      required: true
+    }
+  },
+  messages: {
+    'category[name]': {
+      required: '#{@category.errors.generate_message :name, :blank}'
+    },
+    'category[slug]': {
+      required: '#{@category.errors.generate_message :slug, :blank}'
+    }
+  }
+});
+</script>

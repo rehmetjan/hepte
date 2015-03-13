@@ -5,8 +5,11 @@ class BooksController < ApplicationController
   def index
     @books = Book.includes(:category).page(params[:page])
     
-    @new_books = Book.last(12)
-    @hot_books = Book.order(hot: :desc).limit(12)
+    if params[:category_id]
+      @category = Category.where('lower(slug) = ?', params[:category_id].downcase).first!
+      @books = @books.where(category: @category)
+    end
+    
   end
   
   def new

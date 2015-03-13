@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
   
   before_action :set_locale
   
+  private
+  class AccessDenied < Exception; end
+  
   def no_login_required
     if login?
       redirect_to root_url

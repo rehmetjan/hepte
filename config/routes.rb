@@ -49,7 +49,12 @@ Rails.application.routes.draw do
     resource :confirmation, only: [:new, :show, :create]
   end
   
-  resources :books, concerns: [:commentable, :likeable]
+  resources :books, only: [:index, :show, :new, :create, :edit, :update], concerns: [:commentable, :likeable] do
+    collection do
+      get 'categoried/:category_id', to: 'books#index', as: :categoried
+      get 'search'
+    end
+  end
   
   scope path: '~:username', module: 'users', as: 'user' do
     resources :comments, only: [:index]
@@ -57,7 +62,9 @@ Rails.application.routes.draw do
   end
   
   namespace :admin do
+    root to: 'categories#index'
     resources :categories, except: [:edit]
+    resources :users
   end
   
   constraints(AdminConstraint) do

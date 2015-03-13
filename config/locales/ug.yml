@@ -42,21 +42,20 @@ ug:
         delete_confirm: Are you sure you want to delete this attachment?
     categories:
       flashes:
-        successfully_created: Successfully created
-        successfully_destroy: Successfully destroy
-        successfully_updated: Successfully updated
+        successfully_created: مۇۋەپپىقىيەتلىك قۇرۇلدى
+        successfully_destroy: مۇۋەپپىقىيەتلىك ئۆچۈرۈلدى
+        successfully_updated: مۇۋەپپىقىيەتلىك يېڭىلاندى
       form:
-        create_category: Create category
-        permanently_delete: Permanently delete
-        permanently_delete_confirm: Are you sure you want to permanently delete this
-          category?
-        save_changes: Save changes
+        create_category: كاتىگورىيە قۇرۇش
+        permanently_delete: ئۆچۈرەمسىز؟
+        permanently_delete_confirm: بۇ كاتىگورىيەنى راستلا ئۆچۈرەمسىز؟
+        save_changes: ساقالاش
       index:
-        categories: Categories
-        new_category: New category
-        topics_count: "%{count} topics"
+        categories: كاتىگورىيەلەر
+        new_category: يېڭى كاتىگورىيە
+        books_count: "%{count} كىتاب"
       new:
-        new_category: New category
+        new_category: يېڭى كاتىگورىيە
     comments:
       flashes:
         successfully_restored: Successfully restored
@@ -124,12 +123,12 @@ ug:
         page: Page %{page}
   layouts:
     admin:
-      admin: "%{name} Admin"
+      admin: "%{name} باشقۇرۇش"
       attachments: Attachments
-      categories: Categories
+      categories: كاتىگورىيەلەر
       comments: Comments
       topics: Topics
-      users: Users
+      users: ئەزالار
     application:
       comments: باھالار
       community: Community
@@ -364,11 +363,12 @@ ug:
         isbn: ISBN
         book_cover: كىتاب مۇقاۋىسى
         create: ساقلاش
-        no_category: كاتىگورىيە يوق
+        no_category: كاتىگورىيە
     index: 
         new_books: يېڭى كىتابلار
         hot_books: ئاۋات كىتابلار
         submit_new_book: يېڭى كىتاب قۇرۇش
+        all_categories: بارلىق كاتىگورىيەلەر
     show:
         author: ئاپتور
         price: باھا

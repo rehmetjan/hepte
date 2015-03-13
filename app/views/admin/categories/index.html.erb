@@ -6,7 +6,7 @@
 			<div class="col-md-8 col-md-push-2">
 				<div class="panel">
 					<div class="panel-heading clearfix">
-						<div class="pull-right">
+						<div class="pull-left">
 							<a class="btn btn-default btn-success" href="<%= new_admin_category_path %>">
 								<%= t ('.new_category') %>
 							</a>
@@ -18,15 +18,15 @@
 					<div class="panel-body">
 						<div class="list-group">
 							<% @categories.each do |category| %>
-								<a class="list-group-item" href="<%= admin_category_path %>">
+								<a class="list-group-item" href="<%= admin_category_path(category) %>">
 									<div class="list-group-item-heading">
-										<b><%= t('.category_name') %></b>
+										<b><%= category.name %></b>
 										<span class="text-muted">
 											<%= category.slug %>
 										</span>
 									</div>
 									<div class="text-muted">
-										<%= t('.books_count'), count: category.books_count %>
+										<%= t '.books_count', count: category.books_count %>
 									</div>
 								</a>
 							<% end %>

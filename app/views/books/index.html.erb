@@ -9,8 +9,8 @@
 					</div>
 					<div class="panel-body">
 						<ul class="list-inline">
-							<% if @new_books.any? %>
-								<% @new_books.each do |book| %>
+							<% if @books.any? %>
+								<% @books.last(12).each do |book| %>
 									<li>
 										<a href="<%= book_path(book) %>">
 											<img class="img" src="<%= book.picture.cover.url %>"></img>
@@ -29,8 +29,8 @@
 					</div>
 					<div class="panel-body">
 						<ul class="list-inline">
-						<% if @hot_books.any? %>
-							<% @hot_books.each do |book| %>
+						<% if @books.any? %>
+							<% @books.order(hot: :desc).limit(12).each do |book| %>
 								<li>
 									<a href="<%= book_path(book) %>">
 										<img class="img" src="<%= book.picture.cover.url %>"></img>
@@ -48,6 +48,20 @@
 				<div class="panel">
 					<div class="panel-body">
 						<a class="btn btn-success btn-block" href="<%= new_book_path %>"><%= t('.submit_new_book') %></a>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="panel-body">
+						<ul class="nav nav-pills nav-stacked">
+							<li class="<%= 'active' unless @category %>">
+								<a href="<%= books_path %>"><%= t '.all_categories' %></a>
+							</li>
+							<% Category.order(books_count: :desc).each do |category| %>
+								<li class="<%= 'active' if category == @category %>">
+									<a href="<%= categoried_books_path(category_id: category.slug) %>"><%= category.name %></a>
+								</li>
+							<% end %>
+						</ul>
 					</div>
 				</div>
 			</div>

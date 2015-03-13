@@ -1,7 +1,8 @@
 class Admin::CategoriesController < Admin::ApplicationController
+  before_action :find_category, only: [:show, :edit, :update, :destroy]
   
   def index
-    @category = Category.order(books_count: :desc)
+    @categories = Category.order(books_count: :desc)
   end
   
   def show
@@ -13,6 +14,11 @@ class Admin::CategoriesController < Admin::ApplicationController
   
   def create
     @category = Category.new category_params
+    if @category.save
+      redirect_to admin_categories_path
+    else
+      render :edit
+    end
   end
   
   def update
