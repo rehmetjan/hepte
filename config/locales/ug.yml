@@ -367,6 +367,7 @@ ug:
     index: 
         new_books: يېڭى كىتابلار
         hot_books: ئاۋات كىتابلار
+        submit_new_book: يېڭى كىتاب قۇرۇش
     show:
         author: ئاپتور
         price: باھا
