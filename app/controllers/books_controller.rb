@@ -3,12 +3,15 @@ class BooksController < ApplicationController
   before_action :email_confirmed_required, only: [:new]
   
   def index
+    @books = Topic.includes(:category).page(params[:page])
+    
     @new_books = Book.last(12)
     @hot_books = Book.order(hot: :desc).limit(12)
   end
   
   def new
-    @book = Book.new
+    @category = Category.where('lower(slug) = ?', params[:category_id].downcase.first if params[:category_id].present?)
+    @book = Book.new category: @category
   end
   
   def create

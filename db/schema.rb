@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311090258) do
+ActiveRecord::Schema.define(version: 20150313045336) do
 
   create_table "books", force: true do |t|
     t.string   "name"
@@ -27,9 +27,22 @@ ActiveRecord::Schema.define(version: 20150311090258) do
     t.integer  "user_id"
     t.integer  "likes_count"
     t.float    "hot",            default: 0.0
+    t.integer  "category_id"
   end
 
+  add_index "books", ["category_id"], name: "index_books_on_category_id"
   add_index "books", ["user_id"], name: "index_books_on_user_id"
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.integer  "books_count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "book_id"
+  end
+
+  add_index "categories", ["book_id"], name: "index_categories_on_book_id"
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"

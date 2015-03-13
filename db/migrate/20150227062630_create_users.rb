@@ -7,6 +7,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password_digest
       t.string :avatar
       t.text   :bio
+      t.boolean :confirmed, default: false
+      t.string :locale
+      t.string :locked_at
       
       t.timestamps
     end
