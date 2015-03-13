@@ -7,6 +7,7 @@ class Book < ActiveRecord::Base
   has_many :comments, as: 'commentable'
   has_many :likes, as: 'likeable'
   belongs_to :user
+  belongs_to :category, counter_cache: true
   
   after_create :update_hot
   after_touch :update_hot
