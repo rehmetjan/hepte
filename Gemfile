@@ -47,14 +47,9 @@ gem 'hiredis', '~> 0.4.5'
 gem 'resque', '~> 1.25.1'
 gem 'resque_mailer', '~> 2.2.6'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :development do
+  gem 'spring'
+  gem 'capistrano-rails'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
 
