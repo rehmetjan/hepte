@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:yasinn/hepte.git'
 set :deploy_to, -> { "/srv/www/#{fetch(:application)}" }
 set :rails_env, 'production'
 
-set :linked_files, %w{config/database.yml config/config.yml config/secret.yml}
+set :linked_files, %w{config/database.yml config/config.yml config/secrets.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/uploads}
 
 namespace :deploy do
