@@ -37,6 +37,8 @@ ug:
             username:
               format: ئەزا نامى نومۇر، ھەرىپ ۋە ئوتتۇرا سىزىق
               taken: ئەزا نامى تىزىملىتىپ بولۇنغان
+            password:
+              blank: ھازىرقى پارولنى تولدۇرۇڭ
   admin:
     attachments:
       index:
@@ -316,7 +318,7 @@ ug:
         publish: Publish
         user_s_comments: "%{name}'s comments"
     confirmations:
-      confirm_success: Confirm success
+      confirm_success: غەلبىلىك جەزىملەشتۈرۈلدى
       create:
         resend_success: قايتا ئەۋەتىلدى
       limiter:

@@ -15,8 +15,8 @@
 										<a href="<%= book_path(book) %>">
 											<img class="img" src="<%= book.picture.cover.url %>"></img>
 										</a>
-										<div><%= link_to book.name, book_path(book) %></div>
-										<div><%= book.author %></div>
+										<div class="title"><%= link_to book.name, book_path(book) %></div>
+										<div class="author"><%= book.author %></div>
 									</li>
 								<% end %>
 							<% end %>
@@ -35,8 +35,8 @@
 									<a href="<%= book_path(book) %>">
 										<img class="img" src="<%= book.picture.cover.url %>"></img>
 									</a>
-									<div><%= link_to book.name, book_path(book) %></div>
-									<div><%= book.author %></div>
+									<div class="title"><%= link_to book.name, book_path(book) %></div>
+									<div class="author"><%= book.author %></div>
 								</li>
 							<% end %>
 						<% end %>

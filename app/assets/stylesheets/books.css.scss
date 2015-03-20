@@ -32,5 +32,11 @@
 .book-shelf {
 	.list-inline {
 		padding: 0;
+		.title, .author {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			width: 106px;
+		}
 	}
 }
