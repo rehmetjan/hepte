@@ -12,11 +12,12 @@ class BooksController < ApplicationController
   end
   
   def home
+    @books = Book.order(id: :desc).page(params[:page])
+    
     if params[:category_id]
       @category = Category.where('lower(slug) = ?', params[:category_id].downcase).first!
+      @books = @books.where(category: @category)
     end
-    
-    @books = Book.order(id: :desc).page(params[:page])
   end
   
   def new
