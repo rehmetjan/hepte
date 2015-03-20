@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :find_book, only: [:new, :show, :edit, :update]
-  before_action :email_confirmed_required, only: [:new]
+  before_action :admin_required, only: [:new]
   
   def index
     @books = Book.includes(:category).page(params[:page])

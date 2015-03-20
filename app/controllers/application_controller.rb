@@ -46,6 +46,10 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def admin_required
+    raise AccessDenied unless current_user.admin?
+  end
+  
   def logout
     session.delete(:user_id)
     @current_user = nil
