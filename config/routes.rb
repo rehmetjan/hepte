@@ -51,8 +51,9 @@ Rails.application.routes.draw do
   
   resources :books, only: [:index, :show, :new, :create, :edit, :update], concerns: [:commentable, :likeable] do
     collection do
-      get 'categoried/:category_id', to: 'books#index', as: :categoried
+      get 'categoried/:category_id', to: 'books#home', as: :categoried
       get 'search'
+      get 'all', to: 'books#home'
     end
   end
   

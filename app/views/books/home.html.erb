@@ -1,16 +1,22 @@
-<% @page_title = t('.new_books') %>
+<% @page_title = t('.all_categories') %>
 <div class="main">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 pull-right">
 				<div class="panel book-shelf">
 					<div class="panel-heading">
-						<h3 class="panel-title"><%= t('.new_books') %></h3>
+						<h3 class="panel-title">
+							<% if @category %>
+								<%= @category.name %>
+							<% else %>
+								<%= t('.all_categories') %>
+							<% end %>
+						</h3>
 					</div>
 					<div class="panel-body">
 						<ul class="list-inline">
 							<% if @books.any? %>
-								<% @books.last(12).each do |book| %>
+								<% @books.each do |book| %>
 									<li>
 										<a href="<%= book_path(book) %>">
 											<img class="img" src="<%= book.picture.cover.url %>"></img>
@@ -20,26 +26,6 @@
 									</li>
 								<% end %>
 							<% end %>
-						</ul>
-					</div>
-				</div>
-				<div class="panel book-shelf">
-					<div class="panel-heading">
-						<h3 class="panel-title"><%= t('.hot_books') %></h3>
-					</div>
-					<div class="panel-body">
-						<ul class="list-inline">
-						<% if @books.any? %>
-							<% @books.order(hot: :desc).limit(12).each do |book| %>
-								<li>
-									<a href="<%= book_path(book) %>">
-										<img class="img" src="<%= book.picture.cover.url %>"></img>
-									</a>
-									<div class="title"><%= link_to book.name, book_path(book) %></div>
-									<div class="author"><%= book.author %></div>
-								</li>
-							<% end %>
-						<% end %>
 						</ul>
 					</div>
 				</div>
@@ -53,7 +39,7 @@
 				<div class="panel">
 					<div class="panel-body">
 						<ul class="nav nav-pills nav-stacked">
-							<li class="">
+							<li class="<%= 'active' unless @category %>">
 								<a href="<%= all_books_path %>"><%= t '.all_categories' %></a>
 							</li>
 							<% Category.order(books_count: :desc).each do |category| %>
