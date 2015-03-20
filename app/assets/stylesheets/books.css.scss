@@ -32,6 +32,9 @@
 .book-shelf {
 	.list-inline {
 		padding: 0;
+		li {
+			padding: 5px 0;
+		}
 		.title, .author {
 			white-space: nowrap;
 			overflow: hidden;
