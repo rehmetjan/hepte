@@ -32,9 +32,11 @@ ug:
         user:
           attributes:
             email:
-              format: ئىناۋەتسىز ئىلخەت ئادرېس فورماتى
+              format: ئىناۋەتسىز Email ئادرىس فورماتى
+              taken: Emailئادرىسى تىزىملىتىپ بولۇنغان 
             username:
               format: ئەزا نامى نومۇر، ھەرىپ ۋە ئوتتۇرا سىزىق
+              taken: ئەزا نامى تىزىملىتىپ بولۇنغان
   admin:
     attachments:
       index:
@@ -285,21 +287,23 @@ ug:
       comments_count: "%{count} comments"
   user_mailer:
     confirmation:
-      subject: Email confirmation
+      subject: Email جەزىملەشتۈرۈش
       text_body: |
         Somebody sign up in %{host} with your email. If it was not your, safely ignore this email.
 
         Click the following link to choose a new password:
 
         %{url}
+       click_here: بۇ ئۇلىنىشنى چىكىپ جەزىملەشتۈرۈڭ
     password_reset:
-      subject: Password reset
+      subject: پارول قايتۇرۇش
       text_body: |
         Somebody asked to reset your password on %{host}. If it was not you, safely ignore this email.
 
         Click the following link to choose a new password:
 
         %{url}
+      click_here: بۇ ئۇلىنىشنى چىكىپ پارول قايتۇرۇڭ
   users:
     books:
       index:
