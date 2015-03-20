@@ -294,7 +294,7 @@ ug:
         Click the following link to choose a new password:
 
         %{url}
-       click_here: بۇ ئۇلىنىشنى چىكىپ جەزىملەشتۈرۈڭ
+      click_here: بۇ ئۇلىنىشنى چىكىپ جەزىملەشتۈرۈڭ
     password_reset:
       subject: پارول قايتۇرۇش
       text_body: |
