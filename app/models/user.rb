@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
   validates :username, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A[a-z0-9][a-z0-9-]*\z/i }
   validates :email, uniqueness: { case_sensitive: false }, presence: true, format: { with: /\A([^@\s]+)@((?:[a-z0-9-]+\.)+[a-z]{2,})\z/i }
   
+  scope :unlocked, -> { where(locked_at: nil) }
+  scope :locked, -> { where.not(locked_at: nil) }
+  
   def admin?
     CONFIG['admin_emails'] && CONFIG['admin_emails'].include?(email)
   end

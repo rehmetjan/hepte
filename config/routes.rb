@@ -65,7 +65,16 @@ Rails.application.routes.draw do
   namespace :admin do
     root to: 'categories#index'
     resources :categories, except: [:edit]
-    resources :users
+    
+    resources :users, only: [:index, :show, :update, :destroy ] do
+      collection do 
+        get :locked
+      end
+      member do
+        patch :lock
+        delete :lock, action: 'unlock'
+      end
+    end
   end
   
   constraints(AdminConstraint) do

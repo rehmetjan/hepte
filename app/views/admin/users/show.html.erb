@@ -1,0 +1,123 @@
+<% @page_title = @user.name %>
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-push-2">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							<%= @user.name %>
+						</h2>
+					</div>
+					<div class="panel-body">
+						<%= form_for [:admin, @user], html: { multipart: true, class: 'user-form'} do |f| %>
+							<%= render 'share/flash_messages' %>
+							<%= render 'share/form_error_messages', form: f %>
+							<div class="form-group">
+								<%= f.label :avatar, class: 'control-label' %>
+								<div class="user-image-uploader">
+									<div class="image">
+										<img class="img-rounded" alt="avatar" src="<%= @user.avatar.bigger.url %>">
+									</div>
+									<div class="uploader">
+										<%= f.file_field :avatar %>
+										<div class="check_box">
+											<label><%= f.check_box :remove_avatar %></label>
+											<%= t('.remove_avatar') %>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<%= f.label :name %>
+								<%= f.text_field :name, class: 'form-control', tabIndex: 1 %>
+							</div>
+							<div class="form-group">
+								<%= f.label :username %>
+								<%= f.text_field :username, class: 'form-control', tabIndex: 2 %>
+							</div>
+							<div class="form-group">
+								<%= f.label :email %>
+								<%= f.text_field :email, class: 'form-control', tabIndex: 3 %>
+							</div>
+							<div class="form-group">
+								<div class="checkbox">
+									<label>
+										<%= f.check_box :confirmed %>
+										<%= t('.confirmed') %>
+									</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<%= f.label :bio %>
+								<%= f.text_area :bio, class: 'form-control', tabIndex: 4 %>
+							</div>
+							<div class="form-group">
+								<%= f.label :created_at %>
+								<%= f.text_field :created_at, class: 'form-control', disabled: true  %>
+							</div>
+							<% if @user.locked? %>
+								<div class="form-group">
+                	<%= f.label :locked_at %>
+                	<%= f.text_field :locked_at, class: 'form-control', disabled: true %>
+								</div>
+							<% end %>
+							<div class="clearfix">
+								<%= f.submit t('.save_changes'), class: 'btn btn-success', tabIndex: 5 %>
+								<div class="pull-left">
+									<% if @user.locked? %>
+										<a class=" btn btn-default" href="<%= lock_admin_user_path(@user) %>" data-method="delete">
+										<%= t('.unlock') %>
+										</a>
+									<% else %>
+										<a class=" btn btn-default" href="<%= lock_admin_user_path(@user) %>" data-method="patch">
+										<%= t('.lock') %>
+										</a>
+									<% end %>
+								</div>
+							</div>
+						<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$('form.user-form').validate({
+  rules: {
+    'user[name]': {
+      required: true,
+    },
+    'user[email]': {
+      required: true,
+      format: /^([^@\s]+)@((?:[a-z0-9-]+\.)+[a-z]{2,})$/i,
+      remote: '/users/check_email?id=#{@user.id}'
+    },
+    'user[username]': {
+      required: true,
+      remote: '/users/check_username?id=#{@user.id}',
+      format: /^[a-z0-9-]+$/i
+    },
+    'user[password]': {
+      required: true
+    }
+  },
+  messages: {
+    'user[name]': {
+      required: '#{@user.errors.generate_message :name, :blank}'
+    },
+    'user[email]': {
+      required: '#{@user.errors.generate_message :email, :blank}',
+      remote: '#{@user.errors.generate_message :email, :taken}',
+      format: '#{@user.errors.generate_message :email, :format}'
+    },
+    'user[username]': {
+      required: '#{@user.errors.generate_message :username, :blank}',
+      remote: '#{@user.errors.generate_message :username, :taken}',
+      format: '#{@user.errors.generate_message :username, :format}'
+    }
+  }
+});
+</script>

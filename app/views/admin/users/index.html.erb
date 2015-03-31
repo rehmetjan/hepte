@@ -1,0 +1,50 @@
+<% @page_title = t('.users') %>
+<div class="sub-navbar">
+	<ul class="nav sub-navbar-nav">
+		<li class="<%= 'active' if action_name == 'index' %>">
+			<a href="<%= admin_users_path %>">
+				<%= t('.normal') %>
+			</a>
+		</li>
+		<li class="<%= 'active' if action_name == 'locked' %>">
+			<a href="<%= locked_admin_users_path %>">
+				<%= t('.locked') %>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="main">
+	<div class="container">
+		<%= render 'share/flash_messages' %>
+		<div class="row">
+			<div class="col-md-8 col-md-push-2">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							<%= t('.users') %>
+						</h2>
+					</div>
+					<div class="panel-body">
+						<div class="list-group list-group-hepte">
+							<% @users.each do |user| %>
+								<a class="list-group-item" href="<%= admin_user_path(user) %>">
+									<div class="list-group-item-heading">
+										<%= user.id %>.
+										<b><%= user.name %></b>
+										<span class="text-muted">@<%= user.username %></span>
+									</div>
+									<div class="text-muted">
+										<%= user.email %>
+									</div>
+								</a>
+							<% end %>
+						</div>
+					</div>
+					<div class="panel-footer clearfix">
+						<% paginate @users, theme: 'hepte' %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
