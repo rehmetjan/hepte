@@ -1,7 +1,7 @@
 <div class="main">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-8 pull-right">
+			<div class="col-md-8">
 				<div class="panel">
 					<div class="panel-heading">
 						<h1 class="panel-title"><%= @book.name %></h1>
@@ -14,7 +14,7 @@
 							<div id="info">
 									<span class="pl"><%= t('.author') %>: </span><%= @book.author %><br>
 									<span class="pl"><%= t('.price') %>: </span><%= @book.price %><br>
-									<span class="pl"><%= t('.isbn') %>: </span><%= @book.isbn %>
+									<span class="pl pull-right"><%= t('.isbn') %>:</span> <%= @book.isbn %>
 							 </div>
 						</div>
 						<div class="description">
