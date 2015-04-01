@@ -35,12 +35,14 @@
 		li {
 			padding: 5px 10px;
 		}
-		.title, .author {
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			width: 106px;
-		}
+	}
+}
+.list-inline {
+	.title, .author {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 106px;
 	}
 }
 .input-group-btn:first-child > .btn {
