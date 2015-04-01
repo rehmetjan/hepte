@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :admin_required, only: [:new]
   
   def index
-    @books = Book.includes(:category).page(params[:page])
+    @books = Book.includes(:category).order(id: :desc).page(params[:page])
     
     if params[:category_id]
       @category = Category.where('lower(slug) = ?', params[:category_id].downcase).first!

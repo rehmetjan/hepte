@@ -383,6 +383,7 @@ ug:
         all_categories: بارلىق كاتىگورىيەلەر	
     search:
         search: ئىزدەش
+        no_matching_results: ئىزدەش نەتىجىسى يوق
     show:
         author: ئاپتور
         price: باھا
