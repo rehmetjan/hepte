@@ -1,4 +1,7 @@
 class Book < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+  
   mount_uploader :picture, PictureUploader
   
   validates :name, presence: true

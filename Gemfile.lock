@@ -57,11 +57,27 @@ GEM
       execjs
     coffee-script-source (1.9.1)
     colorize (0.7.5)
+    elasticsearch (1.0.4)
+      elasticsearch-api (= 1.0.4)
+      elasticsearch-transport (= 1.0.4)
+    elasticsearch-api (1.0.4)
+      multi_json
+    elasticsearch-model (0.1.4)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.4)
+    elasticsearch-transport (1.0.4)
+      faraday
+      multi_json
     erubis (2.7.0)
     execjs (2.3.0)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
     font-awesome-sass (4.1.0)
       sass (~> 3.2)
     gravtastic (3.2.6)
+    hashie (3.2.0)
     hike (1.2.3)
     hiredis (0.4.5)
     http_accept_language (2.0.1)
@@ -85,6 +101,7 @@ GEM
     minitest (5.5.1)
     mono_logger (1.1.0)
     multi_json (1.10.1)
+    multipart-post (2.0.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -181,6 +198,8 @@ DEPENDENCIES
   capistrano-rvm
   carrierwave (~> 0.9.0)
   coffee-rails (~> 4.0.0)
+  elasticsearch-model (~> 0.1.0)
+  elasticsearch-rails (~> 0.1.0)
   font-awesome-sass (~> 4.1.0)
   gravtastic (~> 3.2.6)
   hiredis (~> 0.4.5)

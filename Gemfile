@@ -46,6 +46,9 @@ gem 'hiredis', '~> 0.4.5'
 # Background jobs
 gem 'resque', '~> 1.25.1'
 gem 'resque_mailer', '~> 2.2.6'
+# Elasticsearch
+gem 'elasticsearch-model', '~> 0.1.0'
+gem 'elasticsearch-rails', '~> 0.1.0'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do
   gem 'spring'

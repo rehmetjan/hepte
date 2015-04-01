@@ -20,6 +20,17 @@ class BooksController < ApplicationController
     end
   end
   
+  def search
+    @books = Book.search(
+    query: {
+      multi_match: {
+        query: params[:q].to_s,
+        fields: ['name', 'author']
+      }
+    }
+    ).page(params[:page]).records
+  end
+  
   def new
     @category = Category.where('lower(slug) = ?', params[:category_id].downcase).first if params[:category_id].present?
     @book = Book.new category: @category

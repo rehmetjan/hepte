@@ -1,0 +1,37 @@
+<% @page_title = "#{t '.search'} #{params[:q]}" %>
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="panel">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<%= t('.search') %> <%= params[:q] %>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<div class="list-group list-group-hepte">
+							<% if @books.any? %>
+								<ul class="list-inline">
+									<% @books.each do |book| %>
+										<li>
+											<a href="<%= book_path(book) %>">
+												<img class="img" src="<%= book.picture.cover.url %>"></img>
+											</a>
+											<div class="title"><%= link_to book.name, book_path(book) %></div>
+											<div class="author"><%= book.author %></div>
+										</li>
+									<% end %>
+								</ul>
+							<% else %>
+								<div class="list-group-item text-center text-muted empty-message">
+									<%= t '.no_matching_results' %>
+								</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

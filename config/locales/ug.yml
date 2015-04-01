@@ -381,6 +381,8 @@ ug:
     home:
         submit_new_book: يېڭى كىتاب قۇرۇش
         all_categories: بارلىق كاتىگورىيەلەر	
+    search:
+        search: ئىزدەش
     show:
         author: ئاپتور
         price: باھا

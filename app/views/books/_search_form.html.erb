@@ -1,0 +1,14 @@
+<div class="panel">
+	<div class="panel-body">
+		<%= form_tag search_books_path, method: 'get', class: 'sidebar-form', data: { behaviors: 'turboform'} do %>
+				<div class="input-group">
+					<div class="input-group-btn">
+						<button class="btn btn-default" type="submit" tabIndex="2">
+							<i class="fa fa-search"></i>
+						</button>
+					</div>
+					<%= text_field_tag :q, params[:q], class: 'form-control', tabIndex: 1, placeholder: 'كىتاب ياكى ئاپتور ئىزدەش',autocomplete: 'off', autofocus: params[:q].present? %>
+				</div>
+		<% end %>	
+	</div>
+</div>
