@@ -1,0 +1,46 @@
+<% @page_title = t('.books') %>
+<div class="sub-navbar">
+	<ul class="nav sub-navbar-nav">
+		<li class="<%= 'active' if action_name == 'index' %>">
+			<a href="<%= admin_books_path %>">
+				<%= t('.normal') %>
+			</a>
+		</li>
+		<li class="<%= 'active' if action_name == 'locked' %>">
+			<a href="<%= locked_admin_books_path %>">
+				<%= t('.locked') %>
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="main">
+	<div class="container">
+		<%= render 'share/flash_messages' %>
+		<div class="row">
+			<div class="col-md-8 col-md-push-2">
+				<div class="panel">
+					<div class="panel-heading">
+						<h2 class="panel-title">
+							<%= t('.books') %>
+						</h2>
+					</div>
+					<div class="panel-body">
+						<div class="list-group list-group-hepte">
+							<% @books.each do |book| %>
+								<a class="list-group-item" href="<%= admin_book_path(book) %>">
+									<div class="list-group-item-heading">
+										<%= book.id %>.
+										<b><%= book.name %></b>
+									</div>
+								</a>
+							<% end %>
+						</div>
+					</div>
+					<div class="panel-footer clearfix">
+						<% paginate @books, theme: 'hepte' %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -75,6 +75,15 @@ Rails.application.routes.draw do
         delete :lock, action: 'unlock'
       end
     end
+    resources :books, only: [:index, :show, :update, :destroy ] do
+      collection do
+        get :locked
+      end
+      member do
+        patch :lock
+        delete :lock, action: 'unlock'
+      end
+    end
   end
   
   constraints(AdminConstraint) do

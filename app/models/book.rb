@@ -15,12 +15,27 @@ class Book < ActiveRecord::Base
   after_create :update_hot
   after_touch :update_hot
   
+  scope :unlocked, -> { where(locked: false) }
+  scope :locked, -> { where(locked: true) }
+  
   def total_pages
     (comments_count.to_f / Comment.default_per_page).ceil
   end
   
   def liked_by?(user)
     likes.where(user: user).exists?
+  end
+  
+  def lock
+    update_attribute :locked, true
+  end
+  
+  def unlock
+    update_attribute :locked, false
+  end
+  
+  def locked?
+    locked
   end
   
   def calculate_hot

@@ -20,11 +20,11 @@ class User < ActiveRecord::Base
   end
   
   def lock
-    update_attributes :locked_at, current_time_from_proper_timezone
+    update_attribute :locked_at, current_time_from_proper_timezone
   end
   
   def unlock
-    update_attributes :locked_at, nil
+    update_attribute :locked_at, nil
   end
   
   def locked?

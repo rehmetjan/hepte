@@ -3,7 +3,7 @@ class BooksController < ApplicationController
   before_action :admin_required, only: [:new]
   
   def index
-    @books = Book.includes(:category).order(id: :desc).page(params[:page])
+    @books = Book.unlocked.includes(:category).order(id: :desc).page(params[:page])
     
     if params[:category_id]
       @category = Category.where('lower(slug) = ?', params[:category_id].downcase).first!
@@ -12,7 +12,7 @@ class BooksController < ApplicationController
   end
   
   def home
-    @books = Book.order(id: :desc).page(params[:page])
+    @books = Book.unlocked.order(id: :desc).page(params[:page])
     
     if params[:category_id]
       @category = Category.where('lower(slug) = ?', params[:category_id].downcase).first!
@@ -21,7 +21,7 @@ class BooksController < ApplicationController
   end
   
   def search
-    @books = Book.search(
+    @books = Book.unlocked.search(
     query: {
       multi_match: {
         query: params[:q].to_s,
