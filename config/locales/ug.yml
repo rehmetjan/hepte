@@ -414,6 +414,9 @@ ug:
         login: كىرىش
         or: ياكى
         no_comment_yet: ھازىرچە ئىنكاس يوق
+        submit_new_book: يېڭى كىتاب قۇرۇش
+        all_categories: بارلىق كاتىگورىيەلەر
+        note_body: دۆلىتىمىزنىڭ قائىدە-قانۇنىغا خىلاپ مەزمۇن يوللىماڭ!
     new:
         new_book: يېڭى كىتاب
         book_name: كىتاب نامى
