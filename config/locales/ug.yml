@@ -42,7 +42,6 @@ ug:
         book:
           attributes:
             author: ئاپتور
-              blank: قۇرۇق
   admin:
     attachments:
       index:
