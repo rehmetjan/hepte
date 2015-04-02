@@ -39,7 +39,7 @@ class BooksController < ApplicationController
   def create
     @book = current_user.books.create book_params
     if @book.save
-      flash.now[:success] = I18n.t('.new_book_saved')
+      flash[:success] = I18n.t('.books.create.new_book_submitted')
       redirect_to @book
     else
       render :new
@@ -57,7 +57,7 @@ class BooksController < ApplicationController
   
   def update
     if @book.update_attributes book_params
-      flash.now[:success] = 'Book info updated'
+      flash[:success] = I18n.t('.books.update.book_updated')
       redirect_to @book
     else
       render :edit

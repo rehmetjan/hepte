@@ -428,3 +428,7 @@ ug:
         create: ساقلاش
     edit:
         edit_book: كىتاب تەھرىرلەش
+    create:
+        new_book_submitted: سىزگە رەھمەت، يېڭى كىتاب ئۇچۇرى تەستىقلاشنى كۈتىۋاتىدۇ
+    update:
+        book_updated: كىتاب ئۇچۇرى يېڭىلاندى
