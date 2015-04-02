@@ -136,9 +136,10 @@ zh-CN:
       sign_in: "登录"
       sign_up: "注册"
       topics: "话题"
+      my_books: "我的书"
   locales:
-    en: "英文"
-    ug: "维吾尔语"
+    en: "English"
+    ug: "ئۇيغۇرچە"
     zh-CN: "简体中文"
     zh-TW: "正体中文"
   markdown:
@@ -350,27 +351,53 @@ zh-CN:
         user_s_topics: "%{name} 的话题"
   books:
     form:
-        book_name: "书名"
-        author: "作者"
-        price: "价格"
-        description: "内容介绍"
+        book_name: 书名
+        author: 作者
+        price: 价格
+        description: 内容
         isbn: ISBN
-        book_cover: "书封面"
-        create: "创建"
+        book_cover: 书封面
+        create: 保存
+        no_category: 分类
+        edit_book: 编辑书
     index: 
-        new_books: "新书速递"
+        new_books: 新书
+        hot_books: 热门书
+        submit_new_book: 提交新书
+        all_categories: 全部分类
+        note_body: 请不要发布违反我国法律的内容
+    home:
+        submit_new_book: 提交新书
+        all_categories: 全部分类
+    search:
+        search: 搜索
+        no_matching_results: 没有搜索结果
     show:
-        author: "作者"
-        price: "价格"
-        description: "内容介绍"
+        author: 作者
+        price: 价格
+        description: 内容
         isbn: ISBN
-        comments: "评论"
+        comments: 评论
+        add_this_comment: 添加评论
+        signup: 注册
+        login: 登陆
+        or: 或
+        no_comment_yet: 目前没有评论
+        submit_new_book: 提交新书
+        all_categories: 全部分类
+        note_body: 请不要发布违反我国法律的内容
     new:
-        new_book: "新书"
-        book_name: "书名"
-        author: "作者"
-        price: "价格"
-        description: "内容介绍"
+        new_book: 新书
+        book_name: 书名
+        author: 作者
+        price: 价格
+        description: 内容
         isbn: ISBN
-        book_cover: "书封面"
-        create: "创建"
+        book_cover: 书封面
+        create: 保存
+    edit:
+        edit_book: 编辑书
+    create:
+        new_book_submitted: 谢谢您，新书等待审核
+    update:
+        book_updated: 书内容成功更新

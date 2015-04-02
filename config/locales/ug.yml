@@ -164,9 +164,9 @@ ug:
       my_books: كىتابلىرىم
       email_contact: ئالاقىلىشىڭ
   locales:
-    en: ئىنگلىزچە
+    en: English
     ug: ئۇيغۇرچە
-    zh-CN: خەنزۇچە
+    zh-CN: "简体中文"
   markdown:
     area:
       attach_images_by: Attach images by
