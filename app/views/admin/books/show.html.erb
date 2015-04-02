@@ -41,15 +41,15 @@
 					<div class="panel-footer" data-creator-id="<%= @book.user_id %>">
 						<% if login? %>
 						<div class="list-group-item-actions">
-							<a class="btn" data-visible-to="creator" href="<%= edit_book_path(@book) %>">
+							<a class="btn" href="<%= edit_book_path(@book) %>">
 								<i class="fa fa-pencil"></i>
 							</a>
 							<% if @book.locked? %>
-								<a class="btn" data-visible-to="creator" href="<%= lock_admin_book_path(@book) %>" data-method="delete">
+								<a class="btn" href="<%= lock_admin_book_path(@book) %>" data-method="delete">
 									<i class="fa fa-unlock"></i>
 								</a>
 							<% else %>
-								<a class="btn" data-visible-to="creator" href="<%= lock_admin_book_path(@book) %> " data-method="patch" >
+								<a class="btn" href="<%= lock_admin_book_path(@book) %> " data-method="patch" >
 									<i class="fa fa-lock"></i>
 								</a>
 							<% end %>
@@ -64,10 +64,3 @@
 		</div>
 	</div>
 </div>
-	<% if login? %>
-		<% if @book.liked_by?(current_user) %>
-			<script>
-				hepte.Likes.updateLike('book', <%= @book.id %>);
-			</script>
-		<% end %>
-	<% end %>

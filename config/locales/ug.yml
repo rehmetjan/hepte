@@ -39,6 +39,10 @@ ug:
               taken: ئەزا نامى تىزىملىتىپ بولۇنغان
             password:
               blank: ھازىرقى پارولنى تولدۇرۇڭ
+        book:
+          attributes:
+            author: ئاپتور
+              blank: قۇرۇق
   admin:
     attachments:
       index:
