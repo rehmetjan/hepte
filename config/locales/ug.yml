@@ -52,6 +52,9 @@ ug:
         price: باھا
         description: تەپسىلات
         isbn: ISBN
+        books: كىتابلار
+        locked: قۇلۇپلانغان
+        normal: نورمال
       index:
         books: كىتابلار
         locked: قۇلۇپلانغان

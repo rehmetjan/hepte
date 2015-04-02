@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :find_book, only: [:new, :show, :edit, :update]
-  before_action :admin_required, only: [:new]
+  before_action :login_required, :email_confirmed_required, :no_locked_required, only: [:new]
   
   def index
     @books = Book.unlocked.includes(:category).order(id: :desc).page(params[:page])
