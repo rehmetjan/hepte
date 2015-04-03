@@ -82,17 +82,17 @@ ug:
       flashes:
         successfully_restored: Successfully restored
         successfully_trashed: Successfully trashed
-        successfully_updated: Successfully updated
+        successfully_updated: يېڭىلاندى
       index:
         comments: Comments
         normal: Normal
         trashed: Trashed
       show:
         comments: Comments
-        delete: Delete
-        delete_confirm: Are you sure you want to delete this comment?
+        delete: ئۆچۈرۈش
+        delete_confirm: بۇ ئىنكاسنى راست ئۆچۈرەمسىز؟
         restore: Restore
-        save_changes: Save changes
+        save_changes: ساقلاش
     dashboard:
       show:
         dashboard: Dashboard
@@ -107,10 +107,10 @@ ug:
         trashed: Trashed
       show:
         delete: Delete
-        delete_confirm: Are you sure you want to delete this comment?
-        no_category: No category
+        delete_confirm: بۇ ئىنكاسنى راست ئۆچۈرەمسىز؟
+        no_category: كاتىگورىيە يوق
         restore: Restore
-        save_changes: Save changes
+        save_changes: ساقلاش
     users:
       flashes:
         successfully_destroy: ئەزا ئۆچۈرۈلدى
@@ -131,7 +131,7 @@ ug:
         unlock: قۇلۇپ ئېچىش
   comments:
     comment:
-      delete_confirm: Are you sure you want to delete this comment?
+      delete_confirm: بۇ ئىنكاسنى راست ئۆچۈرەمسىز؟
     form:
       cancel: بولدىلا
       save_changes: ساقلاش

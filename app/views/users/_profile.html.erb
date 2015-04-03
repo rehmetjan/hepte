@@ -13,9 +13,7 @@
 	</div>
 	<% if login? and user == current_user %>
 		<div class="panel-footer clearfix">
-			<div class="pull-right">
-				<a class="btn btn-default" href="<%= settings_profile_path %>"><%= t('.edit_profile') %></a>
-			</div>
+			<a class="btn btn-default" href="<%= settings_profile_path %>"><%= t('.edit_profile') %></a>
 		</div>
 	<% end %>
 </div>
