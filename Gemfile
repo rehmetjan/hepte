@@ -39,7 +39,7 @@ gem 'kaminari', '~> 0.15.1'
 # User locale detect
 gem 'http_accept_language', '~> 2.0.1'
 # i18n
-gem 'rails-i18n', '~> 4.0.1'
+gem 'rails-i18n', github: 'yasinn/rails-i18n'
 # redis
 gem 'redis', '~> 3.0.7'
 gem 'hiredis', '~> 0.4.5'

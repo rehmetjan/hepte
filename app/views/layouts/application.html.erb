@@ -4,6 +4,9 @@
   <title><%= @page_title? "#{@page_title} - #{CONFIG['title']}" : "#{CONFIG['title']}" %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<% if I18n.locale != 'en' %>
+		<%= javascript_include_tag "locales/#{I18n.locale}" %>
+	<% end %>
   <%= csrf_meta_tags %>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<% if login? %>
