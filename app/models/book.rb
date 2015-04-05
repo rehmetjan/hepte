@@ -4,13 +4,13 @@ class Book < ActiveRecord::Base
   
   mount_uploader :picture, PictureUploader
   
-  validates :name, presence: true
-  validates :author, presence: true
-  
-  has_many :comments, as: 'commentable'
-  has_many :likes, as: 'likeable'
   belongs_to :user
   belongs_to :category, counter_cache: true
+  has_many :comments, as: 'commentable'
+  has_many :likes, as: 'likeable'
+  
+  validates :name, presence: true
+  validates :author, presence: true
   
   after_create :update_hot
   after_touch :update_hot

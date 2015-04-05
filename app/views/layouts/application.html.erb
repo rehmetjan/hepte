@@ -36,7 +36,7 @@
 							</ul>
 						</li>
 						<li class="<%= 'active' if request.original_fullpath =~ /^\/notifications/ %>">
-							<a class="notifications-bell" href="notifications_path">
+							<a class="notifications-bell" href="<%= notifications_path %>">
 								<i class="fa fa-bell-o"></i>
 								<% if unread_notifications_count > 0 %>
 									<div class="badge"><%= unread_notifications_count > 99 ? '99+' : unread_notifications_count %></div>

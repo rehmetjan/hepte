@@ -1,0 +1,7 @@
+<%= sanitize markdown @comment.body %>
+
+<p>
+	<a href="<%= comment_link(@comment, only_path: false) %>">
+		<%= t('.view_it_on_web') %>
+	</a>
+</p>

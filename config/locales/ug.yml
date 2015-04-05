@@ -180,20 +180,20 @@ ug:
       view_it_on_web: View it on web
   notifications:
     index:
-      delete_all: Delete all
-      delete_all_confirm: Delete all confirm
-      no_notifications: No notifications
-      notifications: Notifications
+      delete_all: ھەممىنى ئۆچۈرۈش
+      delete_all_confirm: ھەممە ئۇقتۇرۇشنى ئۆچۈرەمسىز؟
+      no_notifications: ئۇقتۇرۇش يوق
+      notifications: ئۇقتۇرۇشلار
     notification:
       comment:
-        commented_on: Commented on
+        commented_on: ئىنكاس
       mention:
-        mentioned_you_on: Mentioned you on
+        mentioned_you_on: سىزنى تىلغا ئالغان
   passwords:
     flashes:
-      successfully_update: Successfully update
+      successfully_update: يېڭىلاندى
       token_invalid: Token invalid
-      user_email_not_found: User email not found
+      user_email_not_found: ئەزا Email تېپىلمىدى
   sessions:
     access_limiter:
       are_you: Are you

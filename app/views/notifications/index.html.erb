@@ -4,7 +4,7 @@
 			<div class="col-md-8">
 				<div class="panel">
 					<div class="panel-heading">
-						<div class="pull-right">
+						<div class="pull-left">
 							<a class="btn btn-default" href="<%= settings_notifications_path %>">
 								<i class="fa fa-cog"></i>
 							</a>
@@ -13,7 +13,7 @@
 							</a>
 						</div>
 						<h3 class="panel-title">
-							<%= t('.notification') %>
+							<%= t('.notifications') %>
 						</h3>
 					</div>
 					<div class="panel-body">
@@ -21,11 +21,11 @@
 							<% if @notifications.any? %>
 								<% @notifications.each do |notification| %>
 									<%= render "notifications/notification/#{notification.name}", notification: notification %>
-								<% else %>
+								<% end %>
+							<% else %>
 									<li class="list-group-item text-center text-muted empty-message">
 										<%= t('.no_notifications') %>
 									</li>
-								<% end %>
 							<% end %>
 						</ul>
 					</div>
