@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :books
   has_many :comments, dependent: :destroy
+  has_many :notifications, dependent: :delete_all
   has_many :likes, dependent: :delete_all
   has_many :like_books, through: :likes, source: :likeable, source_type: 'Book'
   has_many :attachments, dependent: :delete_all

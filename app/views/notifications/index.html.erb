@@ -1,0 +1,41 @@
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="panel">
+					<div class="panel-heading">
+						<div class="pull-right">
+							<a class="btn btn-default" href="<%= settings_notifications_path %>">
+								<i class="fa fa-cog"></i>
+							</a>
+							<a class="btn btn-default" href="<%= clear_notifications_path %>" data-remote="true" data-method="delete" data-confirm="<%= t('.delete_all_confirm') %>">
+								<%= t('.delete_all') %>
+							</a>
+						</div>
+						<h3 class="panel-title">
+							<%= t('.notification') %>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<ul class="list-group list-group-hepte">
+							<% if @notifications.any? %>
+								<% @notifications.each do |notification| %>
+									<%= render "notifications/notification/#{notification.name}", notification: notification %>
+								<% else %>
+									<li class="list-group-item text-center text-muted empty-message">
+										<%= t('.no_notifications') %>
+									</li>
+								<% end %>
+							<% end %>
+						</ul>
+					</div>
+					<div class="panel-footer clearfix">
+						<div class="pull-right">
+							<%= paginate @notifications, theme: 'hepte' %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

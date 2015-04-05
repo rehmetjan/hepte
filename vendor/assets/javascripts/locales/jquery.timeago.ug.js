@@ -4,7 +4,7 @@ jQuery.timeago.settings.strings = {
   prefixFromNow: "ھازىردىن باشلاپ",
   suffixAgo: "بۇرۇن ",
   suffixFromNow: null,
-  seconds: "1 سىكۇنت",
+  seconds: "1 سىكۇنت ",
   minute: "1 مىنۇت ",
   minutes: "%d مىنۇت ",
   hour: "%d سائەت ",

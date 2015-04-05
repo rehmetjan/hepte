@@ -1,0 +1,23 @@
+<% cache [notification, locale] do %>
+	<% comment = notification.subject %>
+	<li class="list-group-item notification <%= 'read' if notification.read %>" id="notification_<%= notification.id %>">
+		<a class="btn list-group-item-remove" href="<%= notification_path(notification) %>" data-remote="true" data-method="delete">
+			<i class="fa fa-times"></i>
+		</a>
+		<a class="list-group-item-link" href="<%= comment_link(comment) %>">
+			<div class="list-group-item-avatar">
+				<img class="img-rounded" alt="avatar" src="<%= comment.user.avatar.normal.ulr %>"></img>
+			</div>
+			<div class="list-group-item-content">
+				<div class="list-group-item-heading">
+					<b><%= comment.user.name %></b>
+					<%= t('.commentd_on') %>
+					<b><%= comment_title(comment) %></b>
+					<%= time_ago_tag comment.created_at %>
+				</div>
+				<div class="text-muted">
+					<%= truncate comment.body, length: 140 %>
+				</div>
+			</div>
+		</a>
+	</li>

@@ -15,6 +15,9 @@
 		</article>
 		<div class="list-group-item-actions clearfix">
 			<div class="pull-left">
+				<a class="btn" data-reply-to="@<%= comment.user.username%>">
+				<i class="fa fa-reply"></i>
+				</a>
 				<a class="btn" href="<%= edit_comment_path(comment) %>" data-remote="true" data-visible-to="creator">
 					<i class="fa fa-pencil"></i>
 				</a>

@@ -40,6 +40,13 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :notifications, only: [:index, :destroy] do
+    collection do
+      post :mark
+      delete :clear
+    end
+  end
+  
   namespace :settings do
     resource :password, only: [:show, :update]
     resource :account, only: [:show, :update]
