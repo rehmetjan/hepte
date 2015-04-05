@@ -38,7 +38,7 @@ gem 'mini_magick', '~> 3.7.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 # XML parser
-gem 'nokogiri', '~> 1.6.1'
+gem 'nokogiri', '1.6.5'
 # Paginator
 gem 'kaminari', '~> 0.15.1'
 # User locale detect
