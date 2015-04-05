@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
+  post 'markdown/preview', to: 'markdown#preview'
+  
   root 'books#index'
  
   resources :users, only: [:create] do
@@ -56,6 +58,8 @@ Rails.application.routes.draw do
       get 'all', to: 'books#home'
     end
   end
+  
+  resources :attachments, only: [:create]
   
   scope path: '~:username', module: 'users', as: 'user' do
     resources :comments, only: [:index]

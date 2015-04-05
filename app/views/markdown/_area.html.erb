@@ -1,0 +1,35 @@
+<% resource = form.object %>
+<% resource_name = resource.class.name.downcase %>
+<% write_pane_id = "write_#{resource_name}_#{resource.try(:id) || 'new'}" %>
+<% preview_pane_id = "preview_#{resource_name}_#{resource.try(:id) || 'new'}" %>
+<% tabIndex ||= nil %>
+
+<div class="markdown-area">
+	<ul class="nav nav-tabs">
+		<li class="active">
+			<a href="#<%= write_pane_id %>" data-toggle="tab">
+			<%= t('.write') %>
+			</a>
+		</li>
+		<li>
+			<a href="#<%= preview_pane_id %>" data-toggle="tab" data-behaviors="preview">
+			<%= t('.preview') %>
+			</a>
+		</li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane active" id="<%= write_pane_id %>">
+			<%= form.text_area name, class: 'form-control', data: { behaviors: 'autosize'}, tabIndex: tabIndex %>
+			<div class="file-upload">
+				<%= file_field_tag :file, multiple: true, tabIndex: 99 %>
+				<div class="text text-muted">
+					<%= t('.attach_images_by') %>
+					<a><%= t('.select_them') %></a>
+				</div>
+			</div>
+		</div>
+		<div class="tab-pane" id="<%= preview_pane_id %>">
+			<article class="preview"></article>
+		</div>
+	</div>
+</div>

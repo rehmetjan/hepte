@@ -169,10 +169,10 @@ ug:
     zh-CN: "简体中文"
   markdown:
     area:
-      attach_images_by: Attach images by
-      preview: Preview
-      select_them: Select them
-      write: Write
+      attach_images_by: رەسىم قوشۇش
+      preview: كۆرۈش
+      select_them: ھۆججەت تاللاش
+      write: يېزىش
   notification_mailer:
     comment:
       view_it_on_web: View it on web

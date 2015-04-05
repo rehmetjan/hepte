@@ -75,7 +75,7 @@
 											</div>
 											<%= form_for @book.comments.new, url: book_comments_path(@book), remote: true do |f| %>
 												<div class="form-group">
-													<%= f.text_area :body, class: 'form-control' %>
+													<%= markdown_area f, :body %>
 												</div>
 												<%= f.submit t('.add_this_comment'), class: 'btn btn-success', 'data-disable-with' => t('.add_this_comment') %>
 											<% end %>

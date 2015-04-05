@@ -11,7 +11,7 @@
 			<span class="pull-left"><%= time_ago_tag comment.created_at %></span>
 		</div>
 		<article class="comment-body">
-			<%= comment.body %>
+			<%= markdown_format comment.body %>
 		</article>
 		<div class="list-group-item-actions clearfix">
 			<div class="pull-left">
