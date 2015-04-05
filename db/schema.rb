@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405020018) do
+ActiveRecord::Schema.define(version: 20150405113233) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,11 +100,15 @@ ActiveRecord::Schema.define(version: 20150405020018) do
     t.string   "password_digest"
     t.string   "avatar"
     t.text     "bio"
-    t.boolean  "confirmed",       default: false
+    t.boolean  "confirmed",          default: false
     t.string   "locale"
     t.string   "locked_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "send_comment_email", default: true
+    t.boolean  "send_comment_web",   default: true
+    t.boolean  "send_mention_email", default: true
+    t.boolean  "send_mention_web",   default: true
   end
 
 end
