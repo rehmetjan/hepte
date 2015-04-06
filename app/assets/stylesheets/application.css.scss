@@ -23,3 +23,15 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.footer {
+	position: absolute;
+	height: 60px;
+	width: 100%;
+	background: #333;
+	color: #fff;
+	
+	p {
+		margin: 10px 0;
+	}
+}

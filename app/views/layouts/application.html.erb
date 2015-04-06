@@ -59,7 +59,14 @@
 		<%= yield %>
 		<footer class="footer">
 			<div class="container">
-				<p class="text-center"><a href="mailto:info@hepte.com"><%= t('.email_contact') %><i class="fa fa-email"></i></a> | ئۇيغۇرچە كىتاب ئامبىرى <%= CONFIG['title'] %></p>				
+				<p class="text-muted">
+					<a href="mailto:info@hepte.com">
+						<%= t('.email_contact') %>
+						<i class="fa fa-envelope"></i>
+					</a>
+					<%= CONFIG['title'] %> | ئۇيغۇرچە كىتاب ئامبىرى
+					<a class="pull-left" href="http://selte.net"><img src="<%= image_url('seltenet.png') %>"> سەلتەنەت تور تېخنىكا شىركىتى</a>
+				</p>
 			</div>
 		</footer>
 	</body>
