@@ -10,7 +10,7 @@ module CommentsHelper
   def comment_title(comment)
     case comment.commentable
     when Book
-      comment.commentable.title
+      comment.commentable.name
     else
       t 'helpers.comments.deleted_entry'
     end
