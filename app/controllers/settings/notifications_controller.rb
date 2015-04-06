@@ -1,4 +1,4 @@
-class Settings::NotificationsController < ApplicationController
+class Settings::NotificationsController < Settings::ApplicationController
   def show
   end
   

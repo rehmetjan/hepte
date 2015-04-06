@@ -224,14 +224,13 @@ ug:
       show:
         comment: باھا
         email: Email
-        mention: Mention
-        notifications: Notifications
-        notifications_settings: Notifications settings
-        save_changes: Save changes
-        web: Web
-        when_receive_new_comment_on_watching_items: When receive new comment on watching
-          items
-        when_someone_mention_you_with_username: When someone mention you with username
+        mention: تىلغا ئېلىش
+        notifications: ئۇقتۇرۇشلار
+        notifications_settings: ئۇقتۇرۇش تەڭشىكى
+        save_changes: ساقلاش
+        web: توربەت
+        when_receive_new_comment_on_watching_items: سىز ياقتۇرغان كىتابقا يېڭى باھا يېزىلغاندا ئۇقتۇرۇش ئەۋەتىش
+        when_someone_mention_you_with_username: سىزنى بىرسى تىلغا ئالغاندا ئۇقتۇرۇش ئەۋەتىش
     passwords:
       flashes:
         successfully_updated: يېڭىلاندى

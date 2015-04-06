@@ -10,10 +10,10 @@
 			</div>
 			<div class="list-group-item-content">
 				<div class="list-group-item-heading">
+					<div class="pull-left"><%= time_ago_tag comment.created_at %></div>
 					<b><%= comment.user.name %></b>
 					<%= t('.mentioned_you_on') %>
 					<b><%= comment_title(comment) %></b>
-					<%= time_ago_tag comment.created_at %>
 				</div>
 				<div class="text-muted">
 					<%= truncate comment.body, length: 140 %>
