@@ -51,6 +51,13 @@
 				<div class="navbar-header navbar-right">
 					<a class ="navbar-brand" href="<%= root_path %>"><img src="<%= image_url('logo.png') %>"></img></a>
 				</div>
+				<div class="collapse navbar-collapse" id="navbar">
+					<ul class="nav navbar-nav pull-right ">
+						<li class="<%= 'active' if request.original_fullpath =~/^\/books/ %>">
+							<a href="<%= books_path %>">كىتابلار</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</nav>
 		<% if login? && !current_user.confirmed? %>
